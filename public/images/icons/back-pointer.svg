@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #f68537;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.8px;
+      }
+    </style>
+  </defs>
+  <g id="arrow-drop-down-line" transform="translate(27 26) rotate(-180)">
+    <path id="Контур_3300" data-name="Контур 3300" class="cls-1" d="M0,0H24V24H0Z" transform="translate(3 2)"/>
+    <path id="Line" class="cls-2" d="M0,0,4.095,4.095,0,8.189" transform="translate(12.471 9.939)"/>
+  </g>
+</svg>

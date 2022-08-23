@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
+    <defs>
+        <style>
+            .cls-1,.cls-4{fill:none}.cls-3,.cls-4{stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6px}.cls-3{fill:#fff;stroke:#fff}.cls-4{stroke:#e2e8f0}
+        </style>
+    </defs>
+    <g id="Сгруппировать_17251" transform="translate(-557 -339)">
+        <g id="Сгруппировать_17243" transform="translate(69 204)">
+            <path id="Прямоугольник_7944" d="M0 0H52V52H0z" class="cls-1" transform="translate(488 135)"/>
+            <g id="Сгруппировать_17180" transform="translate(-3 -14)">
+                <circle id="Эллипс_719" cx="26" cy="26" r="26" fill="#e2e8f0" transform="translate(491 149)"/>
+            </g>
+        </g>
+        <g id="Сгруппировать_17244" transform="translate(573.146 354.999)">
+            <path id="Прямоугольник_6206" d="M0 0H24V24H0z" class="cls-1" transform="translate(-2.146 -1.999)"/>
+            <g id="server" transform="translate(0.853 1.001)">
+                <path id="Контур_4149" d="M18.906 2H3.878A1.843 1.843 0 0 0 2 3.805v3.61A1.843 1.843 0 0 0 3.878 9.22h15.028a1.843 1.843 0 0 0 1.878-1.805v-3.61A1.843 1.843 0 0 0 18.906 2z" class="cls-3" transform="translate(-2 -2)"/>
+                <path id="Контур_4150" d="M18.906 14H3.878A1.843 1.843 0 0 0 2 15.8v3.609a1.843 1.843 0 0 0 1.878 1.8h15.028a1.843 1.843 0 0 0 1.878-1.8V15.8a1.843 1.843 0 0 0-1.878-1.8z" class="cls-3" transform="translate(-2 -3.035)"/>
+                <path id="Контур_4151" d="M6 6h4.372" class="cls-4" transform="translate(-2.33 -3.009)"/>
+                <path id="Контур_4152" d="M6 18h4.372" class="cls-4" transform="translate(-2.329 -3.665)"/>
+            </g>
+        </g>
+    </g>
+</svg>

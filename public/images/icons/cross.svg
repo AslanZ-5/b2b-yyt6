@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:red;stroke-linecap:round;stroke-width:1.5px}
+        </style>
+    </defs>
+    <g id="Сгруппировать_17058" transform="translate(-1 -.001)">
+        <path id="Прямоугольник_6394" fill="none" d="M0 0H28V28H0z" transform="translate(1 .001)"/>
+        <g id="Сгруппировать_10361" transform="translate(9.333 8.96)">
+            <path id="Контур_4843" d="M-1131 6551.6l11.37 10.8" class="cls-2" transform="translate(1131 -6551.597)"/>
+            <path id="Контур_4844" d="M0 0l10.8 11.37" class="cls-2" transform="rotate(90 5.686 5.686)"/>
+        </g>
+    </g>
+</svg>

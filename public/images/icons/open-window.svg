@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-3{fill:none;stroke:#333f48;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px}
+        </style>
+    </defs>
+    <g id="Сгруппировать_14293" transform="translate(-1198 -130)">
+        <rect id="Прямоугольник_7383" width="24" height="24" fill="#fff" rx="4" transform="translate(1198 130)"/>
+        <g id="Сгруппировать_14291" transform="translate(35 22)">
+            <path id="Прямоугольник_7381" fill="none" d="M0 0H24V24H0z" transform="translate(1163 108)"/>
+            <g id="maximize" transform="translate(1164.903 109.903)">
+                <path id="Контур_25028" d="M15 3h4.852v4.852" class="cls-3" transform="translate(-2.296)"/>
+                <path id="Контур_25029" d="M7.852 19.852H3V15" class="cls-3" transform="translate(0 -2.296)"/>
+                <path id="Контур_25030" d="M19.661 3L14 8.661" class="cls-3" transform="translate(-2.105)"/>
+                <path id="Контур_25031" d="M3 19.661L8.661 14" class="cls-3" transform="translate(0 -2.105)"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-3{fill:none;stroke:#333f48;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px}
+        </style>
+    </defs>
+    <g id="Сгруппировать_14292" transform="translate(-1158 -113)">
+        <rect id="Прямоугольник_7384" width="24" height="24" fill="#fff" rx="4" transform="translate(1158 113)"/>
+        <g id="Сгруппировать_14290" transform="translate(24 11)">
+            <path id="Прямоугольник_7380" fill="none" d="M0 0H24V24H0z" transform="translate(1134 102)"/>
+            <g id="copy" transform="translate(1136.021 104.021)">
+                <path id="Контур_25026" d="M17.776 9H10.6A1.6 1.6 0 0 0 9 10.6v7.181a1.6 1.6 0 0 0 1.6 1.6h7.181a1.6 1.6 0 0 0 1.6-1.6V10.6A1.6 1.6 0 0 0 17.776 9z" class="cls-3" transform="translate(-1.415 -1.415)"/>
+                <path id="Контур_25027" d="M4.394 12.372H3.6a1.6 1.6 0 0 1-1.6-1.6V3.6A1.6 1.6 0 0 1 3.6 2h7.181a1.6 1.6 0 0 1 1.6 1.6v.8" class="cls-3"/>
+            </g>
+        </g>
+    </g>
+</svg>

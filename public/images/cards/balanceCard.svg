@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="276" height="197" viewBox="0 0 276 197">
+    <defs>
+        <linearGradient id="linear-gradient" x1=".274" x2=".8" y1=".058" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#922eaf"/>
+            <stop offset="1" stop-color="#512893"/>
+        </linearGradient>
+        <clipPath id="clip-path">
+            <path id="Прямоугольник_7206" d="M0 0H165V157.5H0z" class="cls-1"/>
+        </clipPath>
+        <style>
+            .cls-1{fill:#fff}.cls-5,.cls-6{fill:none;stroke:#fff}.cls-5{stroke-width:2px}.cls-6{stroke-width:3px}
+        </style>
+    </defs>
+    <g id="Сгруппировать_14310" transform="translate(1 -0.5)">
+        <g id="Сгруппировать_14216" transform="translate(-1 0.5)">
+            <g id="Сгруппировать_14214" transform="translate(0 0)">
+                <rect id="Прямоугольник_7205" width="276" height="197" fill="url(#linear-gradient)" rx="8"/>
+            </g>
+            <g id="Группа_масок_223" clip-path="url(#clip-path)" transform="translate(111)">
+                <g id="Сгруппировать_14215" opacity="0.08" transform="matrix(0.985, -0.174, 0.174, 0.985, 25.573, -5.868)">
+                    <path id="Контур_24323" d="M71.913 62.475L36 0 0 62.6l71.843-.061z" class="cls-5" transform="translate(28.285 0.235)"/>
+                    <path id="Контур_24324" d="M71.913 62.475L36 0 0 62.6l71.843-.061z" class="cls-1" transform="translate(64.314 62.511)"/>
+                    <path id="Контур_24325" d="M71.913 62.475L36 0 0 62.6l71.843-.061z" class="cls-1" transform="translate(207.138 62.389)"/>
+                    <path id="Контур_24326" d="M71.913.067L35.9 62.6 0 .061 71.843 0z" class="cls-5" transform="translate(64.42 0.174)"/>
+                    <path id="Контур_24327" d="M0 .065l17.691 30.78L35.427 0 .035.03z" class="cls-6" transform="translate(82.083 156.263) rotate(-180)"/>
+                    <path id="Контур_24328" d="M28.409.034L14.182 24.727 0 .024 28.38 0z" class="cls-1" transform="translate(0 62.961)"/>
+                    <path id="Контур_24329" d="M143.576.174l-71.9 124.794L0 .123 143.428 0z" class="cls-1" transform="translate(208.467 0)"/>
+                    <path id="Контур_24330" d="M71.913 62.475L36 0 0 62.6l71.843-.061z" class="cls-1" transform="translate(64.314 62.511)"/>
+                    <path id="Контур_24331" d="M73.011 63.429L36.555 0 0 63.559l72.94-.059z" class="cls-1" transform="translate(207.138 61.433)"/>
+                    <path id="Контур_24332" d="M0 .065l17.691 30.78L35.427 0 .035.03z" class="cls-5" transform="translate(296.695 155.702) rotate(-180)"/>
+                    <path id="Контур_24333" d="M71.383.087L35.634 62.132 0 .061 71.309 0z" class="cls-5" transform="translate(171.638 62.778)"/>
+                    <path id="Контур_24334" d="M71.817 62.361L35.957 0 0 62.509l71.743-.061z" class="cls-6" transform="translate(100.438 125.176)"/>
+                    <path id="Контур_24335" d="M143.576.174l-71.9 124.794L0 .123 143.428 0z" class="cls-1" transform="translate(208.467 0)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

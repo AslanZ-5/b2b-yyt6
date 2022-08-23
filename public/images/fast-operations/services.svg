@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #f68537;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Сгруппировать_14319" data-name="Сгруппировать 14319" transform="translate(0.127 0.311)">
+    <rect id="Прямоугольник_6206" data-name="Прямоугольник 6206" class="cls-1" width="48" height="48" transform="translate(-0.127 -0.311)"/>
+    <g id="server" transform="translate(10.547 11.658)">
+      <path id="Контур_4149" data-name="Контур 4149" class="cls-2" d="M25.52,2H4.613A2.564,2.564,0,0,0,2,4.511V9.533a2.564,2.564,0,0,0,2.613,2.511H25.52a2.564,2.564,0,0,0,2.613-2.511V4.511A2.564,2.564,0,0,0,25.52,2Z" transform="translate(-2 -2)"/>
+      <path id="Контур_4150" data-name="Контур 4150" class="cls-2" d="M25.52,14H4.613A2.563,2.563,0,0,0,2,16.51v5.021a2.563,2.563,0,0,0,2.613,2.51H25.52a2.563,2.563,0,0,0,2.613-2.51V16.51A2.563,2.563,0,0,0,25.52,14Z" transform="translate(-2 1.255)"/>
+      <path id="Контур_4151" data-name="Контур 4151" class="cls-2" d="M6,6h6.082" transform="translate(-0.894 -1.839)"/>
+      <path id="Контур_4152" data-name="Контур 4152" class="cls-2" d="M6,18h6.082" transform="translate(-0.893 1.943)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="53.706" height="59.631" viewBox="0 0 53.706 59.631">
+    <defs>
+        <linearGradient id="linear-gradient" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#7c37b7"/>
+            <stop offset="1" stop-color="#ce33c8"/>
+        </linearGradient>
+        <filter id="Объединение_3" width="53.706" height="59.631" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur" stdDeviation="3"/>
+            <feFlood flood-color="#7c37b7" flood-opacity=".431"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="Сгруппировать_12256" data-name="Сгруппировать 12256" transform="translate(-142.658 -303.259)">
+        <g filter="url(#Объединение_3)" transform="translate(142.66 303.26)">
+            <path id="Объединение_3-2" fill="url(#linear-gradient)" d="M15.151 40.073l-3.118-5.69A17.651 17.651 0 0 1 17.853 0 17.651 17.651 0 0 1 23.5 34.441l-3.086 5.631a3 3 0 0 1-5.261 0z" data-name="Объединение 3" transform="translate(9 6)"/>
+        </g>
+        <circle id="Эллипс_493" cx="5.5" cy="5.5" r="5.5" fill="#fff" data-name="Эллипс 493" transform="translate(164.066 321.189)"/>
+    </g>
+</svg>

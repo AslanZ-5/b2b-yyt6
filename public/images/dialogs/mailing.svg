@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="84" viewBox="0 0 100 84">
+    <defs>
+        <clipPath id="vlk6o11gea">
+            <path fill="#fff" stroke="#707070" d="M0 0H100V84H0z" transform="translate(9 11.418)"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#vlk6o11gea)" transform="translate(-9 -11.418)">
+        <g>
+            <path fill="#fec97d" d="M186.4 182.461h-66.6v43.32h66.6z" transform="translate(24.752 31.57) translate(-119.798 -182.461)"/>
+            <path fill="#fbc06d" d="M153.1 207.656l33.3 25.522h-66.6z" transform="translate(24.752 31.57) translate(-119.797 -189.861)"/>
+            <path fill="#ffbf64" d="M153.1 210.342l-33.3-27.881h66.6z" transform="translate(24.752 31.57) translate(-119.798 -182.461)"/>
+            <path fill="#ffe2a3" d="M153.1 207.983l-33.3-25.522h66.6z" transform="translate(24.752 31.57) translate(-119.798 -182.461)"/>
+        </g>
+        <g>
+            <path fill="#20a96e" d="M12.8 0A12.8 12.8 0 1 1 0 12.8 12.8 12.8 0 0 1 12.8 0z" transform="translate(73.652 58.822) translate(0 0)"/>
+            <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" d="M12.707 6l-6.471 6.471L3 9.236" transform="translate(73.652 58.822) translate(4.814 3.853)"/>
+        </g>
+    </g>
+</svg>

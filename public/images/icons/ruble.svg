@@ -1,0 +1,19 @@
+<svg id="Сгруппировать_14671" data-name="Сгруппировать 14671" xmlns="http://www.w3.org/2000/svg" width="34.797" height="34.797" viewBox="0 0 34.797 34.797">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f7f7f7;
+      }
+
+      .cls-2 {
+        fill: #010101;
+        font-size: 19px;
+        font-family: Roboto-Regular, Roboto;
+      }
+    </style>
+  </defs>
+  <g id="Сгруппировать_14458" data-name="Сгруппировать 14458" transform="translate(0 0)">
+    <path id="Контур_3915" data-name="Контур 3915" class="cls-1" d="M17.4,0A17.4,17.4,0,1,1,0,17.4,17.4,17.4,0,0,1,17.4,0Z"/>
+  </g>
+  <text id="_" data-name="₽" class="cls-2" transform="translate(24 24)"><tspan x="-12.608" y="0">₽</tspan></text>
+</svg>

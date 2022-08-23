@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2px}
+        </style>
+    </defs>
+    <g id="Сгруппировать_11223" data-name="Сгруппировать 11223" transform="translate(.146)">
+        <path id="Прямоугольник_6207" fill="none" d="M0 0H20V20H0z" data-name="Прямоугольник 6207" transform="translate(-.146)"/>
+        <g id="life_buoy" data-name="life buoy" transform="translate(3.036 2.54)">
+            <path id="Контур_3880" d="M9.1 16.206A7.1 7.1 0 1 0 2 9.1a7.1 7.1 0 0 0 7.1 7.106z" class="cls-2" data-name="Контур 3880" transform="translate(-2 -2)"/>
+            <path id="Контур_3881" d="M10.843 13.685A2.843 2.843 0 1 0 8 10.843a2.843 2.843 0 0 0 2.843 2.842z" class="cls-2" data-name="Контур 3881" transform="translate(-3.74 -3.74)"/>
+            <path id="Контур_3882" d="M4.93 4.93l3.013 3.013" class="cls-2" data-name="Контур 3882" transform="translate(-2.848 -2.848)"/>
+            <path id="Контур_3883" d="M14.83 14.83l3.013 3.013" class="cls-2" data-name="Контур 3883" transform="translate(-5.719 -5.719)"/>
+            <path id="Контур_3884" d="M14.83 7.943l3.013-3.013" class="cls-2" data-name="Контур 3884" transform="translate(-5.719 -2.848)"/>
+            <path id="Контур_3885" d="M14.83 8.148l2.509-2.508" class="cls-2" data-name="Контур 3885" transform="translate(-5.718 -3.055)"/>
+            <path id="Контур_3886" d="M4.93 17.843l3.013-3.013" class="cls-2" data-name="Контур 3886" transform="translate(-2.848 -5.719)"/>
+        </g>
+    </g>
+</svg>

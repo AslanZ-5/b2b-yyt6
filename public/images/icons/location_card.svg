@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fd7d3b;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Сгруппировать_16993" data-name="Сгруппировать 16993" transform="translate(-1087 -86)">
+    <path id="Bounds" class="cls-1" d="M100,0h24V24H100Z" transform="translate(987 86)"/>
+    <g id="Сгруппировать_16975" data-name="Сгруппировать 16975" transform="translate(1091.957 87.947)">
+      <path id="Icon" class="cls-2" d="M115.636,3.3a7.306,7.306,0,0,0-7.336,7.337c0,5.518,7.336,13.607,7.336,13.607s7.336-8.089,7.336-13.607A7.387,7.387,0,0,0,115.636,3.3Zm0,9.97a2.634,2.634,0,1,1,2.634-2.634A2.65,2.65,0,0,1,115.636,13.27Z" transform="translate(-108.594 -3.72)"/>
+      <ellipse id="Эллипс_676" data-name="Эллипс 676" class="cls-3" cx="4.601" cy="4.601" rx="4.601" ry="4.601" transform="translate(2.442 2.419)"/>
+    </g>
+  </g>
+</svg>

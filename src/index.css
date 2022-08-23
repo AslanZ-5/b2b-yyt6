@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  background-color: #fafafa;
+}
+
+#appWrapper,
+#appHeader {
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+@font-face {
+  font-family: "PTSans-Bold";
+  src: url(fonts/PTSans/PTSans-Bold/PTSans-Bold.ttf),
+    url(fonts/PTSans/PTSans-Bold/PTSans-Bold.eot),
+    url(fonts/PTSans/PTSans-Bold/PTSans-Bold.woff);
+}
+
+@font-face {
+  font-family: "PTSans-Regular";
+  src: url(fonts/PTSans/PTSans-Regular/PTSans-Regular.ttf),
+    url(fonts/PTSans/PTSans-Regular/PTSans-Regular.eot),
+    url(fonts/PTSans/PTSans-Regular/PTSans-Regular.woff);
+}
+
+/*страницы тарифов и услуг админа - прокрутка списка*/
+#adminServicesList,
+#adminTariffsList {
+  max-height: 70vh;
+  overflow-y: scroll;
+}

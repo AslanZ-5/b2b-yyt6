@@ -1,0 +1,56 @@
+import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from "constants/colors";
+
+export const useStyles = makeStyles((theme: Theme) => ({
+  title: {
+    fontFamily: "PTSans-Bold",
+    fontSize: 20,
+    letterSpacing: 0.24,
+
+    marginBottom: 16,
+    marginTop: 12,
+  },
+  buttonContainer: {
+    display: "flex",
+    justifyContent: "flex-end",
+    width: "100%",
+    marginTop: 12,
+    paddingBottom: 30,
+  },
+  iosMargin: {
+    height: 30,
+  },
+  buttonNext: {
+    fontFamily: "PTSans-Bold",
+    backgroundColor: baseColors.mainOrange,
+    color: "#fff",
+    width: 100,
+    height: 35,
+    fontSize: 14,
+    textTransform: "none",
+    "&:hover": {
+      backgroundColor: baseColors.mainOrange,
+    },
+  },
+  backLink: {
+    display: "flex",
+    alignItems: "center",
+    fontFamily: "PTSans-Bold",
+    fontSize: 14,
+    color: "#f68537",
+    marginLeft: -9,
+    "&:hover": {
+      cursor: "pointer",
+    },
+  },
+  icons: {
+    display: "flex",
+    alignItems: "center",
+  },
+  iconsImg: {
+    paddingLeft: 20,
+    "&:hover": {
+      cursor: "pointer",
+    },
+  },
+}));

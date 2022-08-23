@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Сгруппировать_14285" width="21" height="21" viewBox="0 0 21 21">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#512893;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2px}
+        </style>
+    </defs>
+    <path id="Прямоугольник_6282" fill="none" d="M0 0H21V21H0z"/>
+    <g id="info" transform="translate(2.532 3.215)">
+        <path id="Контур_22748" d="M9.51 17.021A7.51 7.51 0 1 0 2 9.51a7.51 7.51 0 0 0 7.51 7.511z" class="cls-2" transform="translate(-2 -2)"/>
+        <path id="Контур_22749" d="M12 15v-3" class="cls-2" transform="translate(-4.49 -4.49)"/>
+        <path id="Контур_22751" d="M12 12.685V12" class="cls-2" transform="translate(-4.49 -7.441)"/>
+    </g>
+</svg>

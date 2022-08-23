@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2,.cls-3{fill:#fd7d3b}.cls-2,.cls-4{stroke:#fd7d3b;stroke-width:.5px}.cls-4{fill:#fff;stroke:#fff}
+        </style>
+    </defs>
+    <g id="Сгруппировать_12183" transform="translate(1.146 1)">
+        <path id="Прямоугольник_6921" fill="none" d="M0 0H24V24H0z" transform="translate(-1.146 -1)"/>
+        <g id="Сгруппировать_11777" transform="translate(-15.146 -394)">
+            <g id="sim-card" transform="translate(34.658 398) rotate(90)">
+                <path id="Контур_4133" d="M10.282.11a.384.384 0 0 0-.269-.11H1.919A1.921 1.921 0 0 0 0 1.919v12.82a1.921 1.921 0 0 0 1.919 1.919h9.231a1.921 1.921 0 0 0 1.919-1.919V3.017a.384.384 0 0 0-.114-.273zM12.3 14.739a1.153 1.153 0 0 1-1.15 1.151H1.919a1.153 1.153 0 0 1-1.151-1.151V1.919A1.153 1.153 0 0 1 1.919.768h7.936L12.3 3.177zm0 0" class="cls-2" transform="translate(0 0)"/>
+                <path id="Контур_4134" d="M0 .384V7.3a.384.384 0 0 0 .384.384h8.24a.384.384 0 0 0 .367-.5v-6.8A.384.384 0 0 0 8.607 0H.384A.384.384 0 0 0 0 .384zm.768.384h7.455v6.15H.768zm0 0" class="cls-2" transform="translate(1.957 6.851)"/>
+                <path id="Контур_23816" d="M0 0h9l2.1 2.107v4.409H0z" class="cls-3" transform="translate(1 0.658)"/>
+                <path id="Прямоугольник_6998" d="M0 0H1V9H0z" class="cls-3" transform="translate(1 6.658)"/>
+                <path id="Прямоугольник_6999" d="M0 0H10V2H0z" class="cls-3" transform="translate(1 14.658)"/>
+                <path id="Прямоугольник_7000" d="M0 0H3V9H0z" class="cls-3" transform="translate(10 6.658)"/>
+                <path id="Контур_4135" d="M.384 2.092a.384.384 0 0 0 .384-.384V.384a.384.384 0 0 0-.768 0v1.324a.384.384 0 0 0 .384.384zm0 0" class="cls-4" transform="translate(3.406 3.08)"/>
+                <path id="Контур_4136" d="M.384 2.092a.384.384 0 0 0 .384-.384V.384a.384.384 0 1 0-.768 0v1.324a.384.384 0 0 0 .384.384zm0 0" class="cls-4" transform="translate(5.997 3.08)"/>
+                <path id="Контур_4137" d="M.384 2.092a.384.384 0 0 0 .384-.384V.384a.384.384 0 0 0-.768 0v1.324a.384.384 0 0 0 .384.384zm0 0" class="cls-4" transform="translate(8.588 3.08)"/>
+            </g>
+        </g>
+    </g>
+</svg>

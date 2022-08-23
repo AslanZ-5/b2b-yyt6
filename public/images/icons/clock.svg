@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.4px}
+        </style>
+    </defs>
+    <g id="Сгруппировать_11221" data-name="Сгруппировать 11221" transform="translate(.146)">
+        <path id="Прямоугольник_6205" fill="none" d="M0 0H20V20H0z" data-name="Прямоугольник 6205" transform="translate(-.146)"/>
+        <g id="clock" transform="translate(3.036 3.044)">
+            <path id="Контур_4216" d="M8.6 15.193A6.6 6.6 0 1 0 2 8.6a6.6 6.6 0 0 0 6.6 6.593z" class="cls-2" data-name="Контур 4216" transform="translate(-2 -2)"/>
+            <path id="Контур_4217" d="M12 6v4.4l2.932 1.466" class="cls-2" data-name="Контур 4217" transform="translate(-5.587 -3.557)"/>
+        </g>
+    </g>
+</svg>

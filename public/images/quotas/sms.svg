@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Сгруппировать_14670" width="36.523" height="36.523" viewBox="0 0 36.523 36.523">
+    <defs>
+        <style>
+            .cls-4{fill:none;stroke:#000;stroke-width:1.5px}
+        </style>
+    </defs>
+    <g id="Сгруппировать_8690" transform="translate(0 0)">
+        <path id="Контур_3915" fill="#f7f7f7" d="M18.261 0A18.261 18.261 0 1 1 0 18.261 18.261 18.261 0 0 1 18.261 0z"/>
+    </g>
+    <g id="Сгруппировать_14417" transform="translate(8.218 8.218)">
+        <path id="Прямоугольник_6901" fill="none" d="M0 0H21.001V21.001H0z" transform="translate(0)"/>
+        <g id="Comment" transform="translate(3.883 3.691)">
+            <path id="Контур_22827" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5px" d="M3 10.2c0-2.923 0-4.385.908-5.293S6.278 4 9.2 4h1.938c2.548 0 3.822 0 4.68.7a3.1 3.1 0 0 1 .43.43c.7.858.7 2.132.7 4.68 0 2.548 0 3.822-.7 4.68a3.1 3.1 0 0 1-.43.43c-.858.7-2.132.7-4.68.7H7.885a6.647 6.647 0 0 0-.973.036 3.1 3.1 0 0 0-1.36.563 6.65 6.65 0 0 0-.713.662 3.119 3.119 0 0 1-.815.7.775.775 0 0 1-.944-.381A3.116 3.116 0 0 1 3 16.127z" transform="translate(-3 -4)"/>
+            <circle id="Эллипс_521" cx=".581" cy=".581" r=".581" class="cls-4" transform="translate(2.907 5.232)"/>
+            <circle id="Эллипс_522" cx=".581" cy=".581" r=".581" class="cls-4" transform="translate(6.395 5.232)"/>
+            <circle id="Эллипс_523" cx=".581" cy=".581" r=".581" class="cls-4" transform="translate(9.883 5.232)"/>
+        </g>
+    </g>
+</svg>

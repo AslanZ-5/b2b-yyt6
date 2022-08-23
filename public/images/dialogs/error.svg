@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="84" viewBox="0 0 100 84">
+    <defs>
+        <clipPath id="rnzefupeca">
+            <path fill="#fff" stroke="#707070" d="M0 0H100V84H0z" transform="translate(9 11.418)"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#rnzefupeca)" transform="translate(-9 -11.418)">
+        <g>
+            <g>
+                <path fill="#c92636" d="M24.778 9.225a6 6 0 0 1 10.443 0l19.709 34.82A6 6 0 0 1 49.709 53H10.291a6 6 0 0 1-5.222-8.956z" transform="translate(34 33.418) translate(-1 -1) translate(-4 -6)"/>
+                <path fill="#fff2f2" d="M8.642 20.034H5.427L4.971 6.516H9.1zm-1.608 2.117a2.17 2.17 0 0 1 1.574.576 2.1 2.1 0 0 1 0 2.934 2.17 2.17 0 0 1-1.574.576 2.152 2.152 0 0 1-1.561-.576 1.944 1.944 0 0 1-.6-1.46 1.966 1.966 0 0 1 .6-1.467 2.138 2.138 0 0 1 1.561-.583z" transform="translate(34 33.418) translate(-1 -1) translate(19.002 10.957)"/>
+            </g>
+        </g>
+    </g>
+</svg>

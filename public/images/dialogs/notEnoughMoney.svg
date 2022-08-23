@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="84" viewBox="0 0 100 84">
+    <defs>
+        <linearGradient id="svmp2frivb" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#8c2dac"/>
+            <stop offset="1" stop-color="#672b9c"/>
+        </linearGradient>
+        <clipPath id="8igplcejra">
+            <path fill="#fff" stroke="#707070" d="M0 0H100V84H0z" transform="translate(9 11.418)"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#8igplcejra)" transform="translate(-9 -11.418)">
+        <g>
+            <g opacity="0.74">
+                <path fill="url(#svmp2frivb)" d="M117.246 98.737l-.021 37.148a3.026 3.026 0 0 1-3.028 3.023l-63.087-.038a3.024 3.024 0 0 1-3.024-3.027l.023-37.143a3.026 3.026 0 0 1 3.027-3.023l63.086.037a3.026 3.026 0 0 1 3.025 3.026z" transform="translate(-591.153 -348.007) translate(614.788 379.578) translate(-48.087 -95.673)"/>
+                <path fill="#a344c7" d="M48.13 114.383v8.233l69.136.04v-8.233z" transform="translate(-591.153 -348.007) translate(614.788 379.578) translate(-48.11 -106.746)"/>
+                <path fill="#b49ee0" d="M57.94 145.871v2.749c0 .833 1.947 1.51 4.349 1.511l19.576.011c2.4 0 4.351-.673 4.351-1.506v-2.749c0-.833-1.947-1.509-4.349-1.511l-19.576-.011c-2.403-.002-4.351.673-4.351 1.506z" transform="translate(-591.153 -348.007) translate(614.788 379.578) translate(-53.917 -124.489)"/>
+                <path fill="#fff" d="M0 0H38.371V7.756H0z" transform="translate(-591.153 -348.007) translate(614.788 379.578) translate(4.047 18.91)"/>
+                <path fill="#5e2689" d="M0 0H38.371V4.49H0z" transform="translate(-591.153 -348.007) translate(614.788 379.578) translate(4.047 31.564)"/>
+            </g>
+            <g>
+                <path fill="#c92636" d="M13.991 6.417a4 4 0 0 1 7.019 0l10.753 19.664A4 4 0 0 1 28.253 32H6.747a4 4 0 0 1-3.509-5.919z" transform="translate(-591.153 -348.007) translate(663.589 403.069) translate(-3.436 -6.645)"/>
+                <path fill="#fff2f2" d="M7.106 14.519H5.2l-.27-8h2.446zm-.952 1.253a1.285 1.285 0 0 1 .932.341 1.245 1.245 0 0 1 0 1.737 1.285 1.285 0 0 1-.932.341 1.274 1.274 0 0 1-.924-.341 1.151 1.151 0 0 1-.353-.865 1.164 1.164 0 0 1 .353-.869 1.266 1.266 0 0 1 .924-.343z" transform="translate(-591.153 -348.007) translate(663.589 403.069) translate(7.67 1.359)"/>
+            </g>
+        </g>
+    </g>
+</svg>

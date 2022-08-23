@@ -1,0 +1,21 @@
+<svg id="Сгруппировать_16916" data-name="Сгруппировать 16916" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #f68537;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <rect id="Прямоугольник_6282" data-name="Прямоугольник 6282" class="cls-1" width="21" height="21"/>
+  <g id="info" transform="translate(2.532 3.215)">
+    <path id="Контур_22748" data-name="Контур 22748" class="cls-2" d="M9.51,17.021A7.51,7.51,0,1,0,2,9.51,7.51,7.51,0,0,0,9.51,17.021Z" transform="translate(-2 -2)"/>
+  </g>
+  <path id="check" class="cls-2" d="M10.126,6,5.914,10.212,4,8.3" transform="translate(3.034 2.582)"/>
+</svg>
