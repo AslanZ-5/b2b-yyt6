@@ -1,4 +1,5 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from 'constants/colors';
 
 export const useStyles = makeStyles((theme: Theme) => ({
     refreshBlock:{
@@ -10,7 +11,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
         fontWeight: "bold",
         lineHeight: 0.94,
         letterSpacing: "0.15px",
-        color: "#fd7d3b",
+        color: baseColors.primaryBlue,
         display: "flex",
         alignItems: "center",
         marginRight: "6px"

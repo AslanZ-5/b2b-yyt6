@@ -28,10 +28,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
       fontSize: 14,
     },
     "& .Mui-checked": {
-      color: baseColors.mainOrange,
+      color: baseColors.primaryBlue,
     },
     "& .MuiCheckbox-root": {
-      color: "#a1a1a1",
+      color: baseColors.primaryGrey,
     },
   },
   costTabs: {
@@ -47,7 +47,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     "& .MuiButtonBase-root.MuiTab-root": {
       fontFamily: "PTSans-Bold",
       fonstSize: 14,
-      color: "#a1a1a1",
+      color: baseColors.primaryGrey,
       minHeight: 32,
       minWidth: "auto",
       marginRight: 20,
@@ -60,7 +60,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
         maxHeight: 18,
       },
       "&.Mui-selected": {
-        color: baseColors.mainOrange,
+        color: baseColors.primaryBlue,
         "& .MuiTab-wrapper": {
           height: "100%",
           maxHeight: 25,

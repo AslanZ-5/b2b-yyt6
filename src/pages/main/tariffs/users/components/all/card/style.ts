@@ -1,10 +1,11 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from "constants/colors";
 
 export const useStyles = makeStyles((theme: Theme) => ({
   container: {
     borderRadius: 8,
     boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-    backgroundColor: "#ffffff",
+    backgroundColor: baseColors.primaryWhite,
     "&:hover": {
       cursor: "pointer",
     },
@@ -24,7 +25,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Bold",
     fontSize: 16,
     lineHeight: 1.5,
-    color: "#131313",
+    color: baseColors.primaryBlack,
 
     marginBottom: 6,
   },
@@ -61,7 +62,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Bold",
     fontSize: 20,
     lineHeight: 2,
-    color: "#010101",
+    color: baseColors.primaryBlack,
   },
   buttonMore: {
     textAlign: "center",

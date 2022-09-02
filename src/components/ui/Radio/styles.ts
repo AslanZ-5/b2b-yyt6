@@ -4,9 +4,9 @@ import { baseColors } from "constants/colors";
 export const useStyles = makeStyles((theme: Theme) => ({
   root: {
     "& .MuiRadio-colorSecondary": {
-      color: "#949fa2",
+      color: baseColors.primaryGrey,
       "&.Mui-checked": {
-        color: baseColors.mainOrange,
+        color: baseColors.primaryBlue,
       },
     },
     "& .MuiFormControlLabel-label": {

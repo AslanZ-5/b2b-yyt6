@@ -1,10 +1,11 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from 'constants/colors';
 
 export const useStyles = makeStyles((theme: Theme) => ({
   cost: {
     fontFamily: "PTSans-Bold",
     fontSize: 16,
-    color: "#010101",
+    color: baseColors.primaryBlack,
     paddingRight: 4,
   },
   label: {

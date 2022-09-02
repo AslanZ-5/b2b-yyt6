@@ -17,6 +17,8 @@ import { fetchUser, setLoading } from "store/slices/user";
 
 import { useStyles } from "./styles";
 
+
+
 interface IAddAccountResponse {
   token: string;
   expire: string;
@@ -178,7 +180,7 @@ const AddAccountDialog: FC<IProps> = ({
             ) : null}
             {otpErrors?.message && !otpResponse ? (
               <div className={classes.requestErrors}>
-                Номер не является клиентом Вин мобайл
+                Номер не является клиентом +7Телеком
               </div>
             ) : null}
             <Button

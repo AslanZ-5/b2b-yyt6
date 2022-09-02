@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   container: {
     borderRadius: 8,
     boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-    backgroundColor: "#ffffff",
+    backgroundColor: baseColors.primaryWhite,
     padding: 20,
   },
   title: {
@@ -20,6 +20,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
   link: {
     fontFamily: "PTSans-Bold",
     fontSize: 14,
-    color: baseColors.mainOrange,
+    color: baseColors.primaryBlue,
   },
 }));

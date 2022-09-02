@@ -1,4 +1,5 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from "constants/colors";
 
 export const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -27,7 +28,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Regular",
     fontSize: 14,
     marginTop: 6,
-    color: "#a5abaf",
+    color: baseColors.primaryGrey,
   },
   radiosContainer: {
     marginTop: 30,
@@ -41,7 +42,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   infoContainer: {
     padding: 16,
     borderRadius: 8,
-    backgroundColor: "#eff3f8",
+    backgroundColor: baseColors.lightGrey,
     marginBottom: 24,
   },
   infoHeader: {
@@ -72,7 +73,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   commonInfo: {
     fontFamily: "PTSans-Regular",
     fontSize: 14,
-    color: "#a5abaf",
+    color: baseColors.primaryGrey,
     textAlign: "center",
   },
   buttonContainer: {
@@ -93,6 +94,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
   error: {
     fontFamily: "PTSans-Regular",
     fontSize: 14,
-    color: "#ff1a31",
+    color: baseColors.error,
   },
 }));

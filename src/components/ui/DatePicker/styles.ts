@@ -9,11 +9,11 @@ export const useStyles = makeStyles<Theme>((theme: Theme) => ({
       border: "1px solid rgba(0, 0, 0, 0.1)",
       borderRadius: 8,
       "&:hover": {
-        borderColor: baseColors.mainOrange,
+        borderColor: baseColors.primaryBlue,
       },
     },
     "& .MuiTextField-root[readonly] .MuiInputBase-input": {
-      color: "#a5abaf",
+      color: baseColors.primaryGrey,
     },
     "& .MuiInputBase-input": {
       fontFamily: "PTSans-Regular",
@@ -42,7 +42,7 @@ export const useStyles = makeStyles<Theme>((theme: Theme) => ({
       display: "none",
     },
     "& .MuiPickersDay-daySelected": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
     "& .MuiDialogActions-root": {
       display: "none",

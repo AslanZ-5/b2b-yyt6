@@ -4,7 +4,7 @@ import { baseColors } from "constants/colors";
 export const useStyles = makeStyles((theme: Theme) => ({
   root: {
     "& .thumb-vertical": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
       borderRadius: 6,
       opacity: 0.8,
     },
@@ -14,11 +14,11 @@ export const useStyles = makeStyles((theme: Theme) => ({
       right: 2,
       bottom: 2,
       top: 2,
-      backgroundColor: "#F0F0F0",
+      backgroundColor: baseColors.lightGrey,
       borderRadius: 6,
     },
     "& .thumb-horizontal": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
       borderRadius: 6,
       opacity: 0.8,
     },
@@ -28,7 +28,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
       bottom: 2,
       right: 2,
       left: 2,
-      backgroundColor: "#F0F0F0",
+      backgroundColor: baseColors.lightGrey,
       borderRadius: 6,
     },
   },

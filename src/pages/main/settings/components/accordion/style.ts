@@ -5,15 +5,15 @@ export const useStyles = makeStyles((theme: Theme) => ({
   root: {
     "& .MuiAccordion-root": {
       boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-      backgroundColor: "#ffffff",
+      backgroundColor: baseColors.primaryWhite,
     },
     "& .MuiAccordionSummary-root": {
       borderRadius: 8,
-      backgroundColor: "#ffffff",
+      backgroundColor: baseColors.primaryWhite,
       padding: 25,
     },
     "& MuiCollapse-container": {
-      backgroundColor: "#ffffff",
+      backgroundColor: baseColors.primaryWhite,
     },
     "& .MuiAccordionDetails-root": {
       padding: "0 25px 25px 25px",
@@ -36,6 +36,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
   actionsButton: {
     fontFamily: "PTSans-Bold",
     fontSize: 14,
-    color: baseColors.mainOrange,
+    color: baseColors.primaryBlue,
   },
 }));

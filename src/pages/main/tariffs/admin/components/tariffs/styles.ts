@@ -11,14 +11,14 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   searchBtn: {
-    backgroundColor: baseColors.mainOrange,
+    backgroundColor: baseColors.primaryBlue,
     margin: "0 auto",
     width: 35,
     minWidth: 35,
     padding: 0,
     height: 35,
     "&:hover": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
   },
   numbersInfo: {
@@ -49,7 +49,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   emptyText: {
     fontFamily: "PTSans-Regular",
     fontSize: 16,
-    color: "#a5abaf",
+    color: baseColors.primaryGrey,
     textAlign: "center",
     marginTop: 10,
   },

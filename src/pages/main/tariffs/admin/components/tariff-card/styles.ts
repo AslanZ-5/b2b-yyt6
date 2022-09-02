@@ -6,11 +6,11 @@ export const useStyles = makeStyles((theme: Theme) => ({
     padding: 14,
     borderRadius: 8,
     boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-    backgroundColor: "#ffffff",
+    backgroundColor: baseColors.primaryWhite,
     marginBottom: 30,
   },
   highlightContainer: {
-    border: `1px solid ${baseColors.mainOrange}`,
+    border: `1px solid ${baseColors.primaryBlue}`,
   },
   header: {
     marginBottom: 16,
@@ -22,7 +22,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Bold",
     fontSize: 18,
     lineHeight: 1,
-    color: "#131313",
+    color: baseColors.primaryBlack,
 
     paddingLeft: 22,
   },
@@ -49,7 +49,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Bold",
     fontSize: 14,
     //lineHeight: 1.29,
-    color: "#f68537",
+    color: baseColors.primaryBlue,
     display: "inline-block",
 
     marginTop: 15,

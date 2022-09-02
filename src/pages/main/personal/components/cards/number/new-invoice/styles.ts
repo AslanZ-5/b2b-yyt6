@@ -23,7 +23,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   infoContainer: {
     padding: 16,
     borderRadius: 8,
-    backgroundColor: "#eff3f8",
+    backgroundColor: baseColors.lightGrey,
     marginBottom: 30,
   },
   infoHeader: {
@@ -51,7 +51,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   error: {
     fontFamily: "PTSans-Regular",
     fontSize: 14,
-    color: "#ff1a31",
+    color: baseColors.error,
   },
   label: {
     fontFamily: "PTSans-Regular",
@@ -59,8 +59,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   emailsInputRoot: {
     borderRadius: 4,
-    border: "solid 1px #c5c5c5",
-    backgroundColor: "#fff",
+    border: `solid 1px ${baseColors.primaryGrey}`,
+    backgroundColor: baseColors.primaryWhite,
     padding: "10px 16px",
     paddingBottom: 10,
     position: "relative",
@@ -78,14 +78,14 @@ export const useStyles = makeStyles((theme: Theme) => ({
     color: "white",
 
     marginBottom: 6,
-    backgroundColor: `${baseColors.darkOrange} !important`,
+    backgroundColor: `${baseColors.primaryBlue} !important`,
 
     "&:hover": {
-      backgroundColor: baseColors.darkOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
 
     "&:focus": {
-      backgroundColor: baseColors.darkOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
 
     "& .MuiChip-deleteIcon": {
@@ -94,7 +94,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   emailsInputHelperText: {
     fontFamily: "PTSans-Regular",
-    color: "#ff1a31",
+    color: baseColors.error,
     margin: 0,
     fontSize: 11,
 

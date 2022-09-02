@@ -182,8 +182,8 @@ const OtpDialog: FC<IProps> = ({
                 })}
                 additionalClasses={{
                   width: "217px",
-                  backgroundColor: baseColors.mainOrange,
-                  color: baseColors.lightOrange,
+                  backgroundColor: baseColors.primaryBlue,
+                  color: baseColors.lightBlue,
                 }}
                 disabled={!values.password.length}
               />
@@ -196,8 +196,8 @@ const OtpDialog: FC<IProps> = ({
               }}
               additionalClasses={{
                 width: "217px",
-                backgroundColor: baseColors.lightOrange,
-                color: baseColors.mainOrange,
+                backgroundColor: baseColors.lightBlue,
+                color: baseColors.primaryBlue,
               }}
             />
           </Box>

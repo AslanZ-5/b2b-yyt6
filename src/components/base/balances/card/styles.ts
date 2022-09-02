@@ -5,14 +5,14 @@ export const useStyles = makeStyles<Theme>((theme) => ({
   container: {
     borderRadius: 8,
     boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-    backgroundColor: "#ffffff",
+    backgroundColor: baseColors.primaryWhite,
     padding: "16px 20px",
   },
   title: {
     fontFamily: "PTSans-Bold",
     fontSize: 16,
     marginBottom: 3,
-    color: "#131313",
+    color: baseColors.primaryBlack,
   },
   date: {
     fontFamily: "PTSans-Regular",
@@ -24,10 +24,10 @@ export const useStyles = makeStyles<Theme>((theme) => ({
     height: 6,
     borderRadius: 5,
     "&.MuiLinearProgress-colorPrimary": {
-      backgroundColor: baseColors.lightOrange,
+      backgroundColor: baseColors.lightBlue,
     },
     "& .MuiLinearProgress-barColorPrimary": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
       borderRadius: 5,
     },
   },
@@ -39,6 +39,6 @@ export const useStyles = makeStyles<Theme>((theme) => ({
   value: {
     fontFamily: "PTSans-Bold",
     fontSize: 14,
-    color: "#131313",
+    color: baseColors.primaryBlack,
   },
 }));

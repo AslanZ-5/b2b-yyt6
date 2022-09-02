@@ -26,7 +26,7 @@ export const useStyles = makeStyles({
         },
         "&:last-of-type": {
           fontFamily: "PTSans-Bold",
-          color: baseColors.mainOrange,
+          color: baseColors.primaryBlue,
         },
       },
     },

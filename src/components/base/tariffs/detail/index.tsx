@@ -143,8 +143,8 @@ const TariffDetail: FC<IProps> = ({ id, isOwn }) => {
                   history.push(routes.personal.admin.tariffs.change)
                 }
                 additionalClasses={{
-                  color: baseColors.mainOrange,
-                  backgroundColor: baseColors.lightOrange,
+                  color: baseColors.primaryBlue,
+                  backgroundColor: baseColors.lightBlue,
                   width: "200px",
                 }}
               />
@@ -173,8 +173,8 @@ const TariffDetail: FC<IProps> = ({ id, isOwn }) => {
             )
           }
           additionalClasses={{
-            color: baseColors.mainOrange,
-            backgroundColor: baseColors.lightOrange,
+            color: baseColors.primaryBlue,
+            backgroundColor: baseColors.lightBlue,
             width: "275px",
           }}
         />

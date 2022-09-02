@@ -163,21 +163,6 @@ const Personal: React.FC = () => {
         </Grid>
         {user?.isAdmin ? (
           <>
-            <Box width="100%" mt={4} mb={1} id="personalPageMyNumbersHeader">
-              <Grid justify="space-between" container item>
-                <Typography
-                  className={classes.subTitle}
-                  onClick={() => {}}
-                  id="personalPageMyNumbersLabel"
-                >
-                  Сотрудники
-                </Typography>
-              </Grid>
-            </Box>
-            <Box width="100%">
-              <NumbersSearch />
-            </Box>
-
             <Box mt={4} mb={2} id="personalPageFastOperationsHeader">
               <Typography
                 className={classes.subTitle}

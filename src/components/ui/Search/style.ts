@@ -24,17 +24,17 @@ export const useStyles = makeStyles((theme: Theme) => ({
         borderColor: "rgba(0, 0, 0, 0.1)",
       },
       "&:hover fieldset": {
-        borderColor: baseColors.mainOrange,
+        borderColor: baseColors.primaryBlue,
       },
       "&.Mui-focused fieldset": {
-        borderColor: baseColors.mainOrange,
+        borderColor: baseColors.primaryBlue,
       },
     },
     "& .MuiInputBase-input": {
       fontFamily: "PTSans-Regular",
       padding: "16px 14px",
       fontSize: 14,
-      color: "#9fa4a8",
+      color: baseColors.primaryGrey,
       opacity: 1,
     },
     "& .MuiInputAdornment-positionStart": {
@@ -43,15 +43,15 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   findBtn: {
     fontFamily: "PTSans-Bold",
-    backgroundColor: baseColors.mainOrange,
-    color: "#fff",
+    backgroundColor: baseColors.primaryBlue,
+    color: baseColors.primaryWhite,
     margin: "0 auto",
     width: 100,
     height: 35,
     fontSize: 14,
     textTransform: "none",
     "&:hover": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
   },
 }));

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
     <defs>
         <style>
-            .cls-1{fill:none;stroke:#fd7d3b;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}
+            .cls-1{fill:none;stroke:#0077FF;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}
         </style>
     </defs>
     <g id="Сгруппировать_17121" transform="translate(0.033)">
@@ -12,7 +12,7 @@
                 <path id="Контур_3935" d="M8 2v2.993" class="cls-1" transform="translate(-4.259 -2)"/>
                 <path id="Контур_3936" d="M3 10h13.468" class="cls-1" transform="translate(-3 -4.014)"/>
             </g>
-            <path id="Прямоугольник_5761" fill="#fd7d3b" d="M0 0H13V4H0z" transform="translate(0.468 1.532)"/>
+            <path id="Прямоугольник_5761" fill="#0077FF" d="M0 0H13V4H0z" transform="translate(0.468 1.532)"/>
         </g>
         <path id="Прямоугольник_7831" fill="none" d="M0 0H24V24H0z" transform="translate(-0.033)"/>
     </g>

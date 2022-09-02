@@ -26,7 +26,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   loginBySms: {
     fontFamily: "PTSans-Bold",
     fontSize: 14,
-    color: baseColors.mainOrange,
+    color: baseColors.primaryBlue,
     margin: "0 auto",
     "&:hover": {
       cursor: "pointer",
@@ -36,12 +36,12 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Bold",
     fontSize: 14,
     marginBottom: 12,
-    color: "#f44336",
+    color: baseColors.error,
   },
   inputStartAddornment: {
     fontFamily: "PTSans-Regular",
     fontSize: 14,
-    color: "#9fa4a8",
+    color: baseColors.primaryGrey,
     paddingRight: 6,
   },
   passwordInputImg: {

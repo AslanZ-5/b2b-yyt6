@@ -2,7 +2,7 @@ import { routes } from "constants/routes";
 
 export const getTabsList = (isAdmin: boolean) => [
   {
-    label: "Мой WIN",
+    label: "Мой кабинет",
     path: routes.personal.base,
     icon: "/images/icons/home.svg",
     activeIcon: "/images/icons/home-active.svg",

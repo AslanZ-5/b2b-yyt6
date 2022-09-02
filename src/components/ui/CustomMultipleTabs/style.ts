@@ -46,19 +46,19 @@ export const useStyles = makeStyles((theme: Theme) => ({
       minHeight: 20,
       padding: 0,
       textTransform: "none",
-      color: "#a5abaf",
+      color: baseColors.primaryGrey,
 
       "& .MuiTab-wrapper": {
         alignItems: "flex-start",
       },
 
       "&.Mui-selected": {
-        color: "#000",
+        color: baseColors.primaryBlack,
       },
     },
   },
   indicator: {
-    backgroundColor: baseColors.darkOrange,
+    backgroundColor: baseColors.primaryBlue,
     top: 23,
   },
 }));

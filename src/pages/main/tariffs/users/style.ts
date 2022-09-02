@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
       textTransform: "none",
       fontFamily: "PTSans-Bold",
       "&.Mui-selected": {
-        color: "#131313",
+        color: baseColors.primaryBlack,
       },
       "& .MuiTab-wrapper": {
         alignItems: "flex-start",
@@ -22,6 +22,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   indicator: {
-    backgroundColor: baseColors.darkOrange,
+    backgroundColor: baseColors.primaryBlue,
   },
 }));

@@ -1,4 +1,5 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from "constants/colors";
 
 export const useStyles = makeStyles((theme: Theme) => ({
   pageContainer: {
@@ -6,7 +7,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   itemContainer: {
     boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-    backgroundColor: "#ffffff",
+    backgroundColor: baseColors.primaryWhite,
     padding: "20px 30px",
     marginBottom: 6,
   },
@@ -23,7 +24,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   hours: {
     fontFamily: "PTSans-Bold",
     fontSize: 16,
-    color: "#141414",
+    color: baseColors.primaryBlack,
     textAlign: "right",
   },
 }));

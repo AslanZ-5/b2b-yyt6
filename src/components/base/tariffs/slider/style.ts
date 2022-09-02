@@ -5,9 +5,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
   root: {
     marginBottom: 0,
     marginTop: 0,
-    color: baseColors.mainOrange,
+    color: baseColors.primaryBlue,
     "& .MuiSlider-mark": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
       top: 11,
       width: 8,
       height: 8,
@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
       opacity: 0.6,
     },
     "& .MuiSlider-rail": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
       height: "4px",
       top: 13,
     },
@@ -25,7 +25,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
       top: 13,
     },
     "& .MuiSlider-markActive": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
       opacity: 1,
     },
     "& .MuiSlider-thumb": {

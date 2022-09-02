@@ -28,7 +28,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     transition: "opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
     borderRadius: 10,
     pointerEvents: "none",
-    backgroundColor: "#000",
+    backgroundColor: baseColors.primaryBlack,
   },
   storiesImg: {
     width: "inherit",
@@ -44,12 +44,12 @@ export const useStyles = makeStyles((theme: Theme) => ({
     position: "absolute",
     left: "15%",
     bottom: 20,
-    background: baseColors.mainOrange,
-    color: "#fff",
+    background: baseColors.primaryBlue,
+    color: baseColors.primaryWhite,
     width: "70%",
     textTransform: "none",
     "&:hover": {
-      background: baseColors.mainOrange,
+      background: baseColors.primaryBlue,
     },
   },
   storiesText: {
@@ -58,7 +58,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Bold",
     fontSize: 32,
     lineHeight: 1.25,
-    color: "#fff",
+    color: baseColors.primaryWhite,
     left: 20,
     top: 0,
     maxWidth: 210,

@@ -11,15 +11,15 @@ export const useStyles = makeStyles((theme: Theme) => ({
   errorText: {
     fontFamily: "PTSans-Regular",
     fontSize: 14,
-    color: "#adb2b6",
+    color: baseColors.primaryGrey,
     paddingLeft: 4,
   },
   checkbox: {
     "& .MuiCheckbox-root.Mui-checked": {
-      color: baseColors.mainOrange,
+      color: baseColors.primaryBlue,
     },
     "& .MuiCheckbox-root": {
-      color: "#a1a1a1",
+      color: baseColors.primaryGrey,
       marginTop: -9,
     },
     "& .MuiFormControlLabel-label": {
@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   checkBoxLink: {
     fontFamily: "PTSans-Bold",
     fontSize: 16,
-    color: baseColors.mainOrange,
+    color: baseColors.primaryBlue,
   },
   confirmDialogLabel: {
     fontFamily: "PTSans-Regular",

@@ -59,7 +59,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   description: {
     fontFamily: "PTSans-Regular",
     textAlign: "center",
-    color: "#000",
+    color: baseColors.primaryBlack,
   },
   btn: {
     fontFamily: "PTSans-Bold",
@@ -67,24 +67,24 @@ export const useStyles = makeStyles((theme: Theme) => ({
     height: 35,
     textTransform: "none",
     "&.Mui-disabled": {
-      backgroundColor: "#fbbb99",
-      color: "#fcfcfc",
+      backgroundColor: baseColors.lightBlue,
+      color: baseColors.secondaryGrey,
     },
   },
   downBtn: {
     fontFamily: "PTSans-Regular",
-    backgroundColor: baseColors.lightOrange,
-    color: baseColors.mainOrange,
+    backgroundColor: baseColors.lightBlue,
+    color: baseColors.primaryBlue,
     "&:hover": {
-      backgroundColor: baseColors.lightOrange,
+      backgroundColor: baseColors.lightBlue,
     },
   },
   upBtn: {
     fontFamily: "PTSans-Regular",
-    backgroundColor: baseColors.mainOrange,
-    color: "#fff",
+    backgroundColor: baseColors.primaryBlue,
+    color: baseColors.primaryWhite,
     "&:hover": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
   },
 }));

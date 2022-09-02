@@ -22,10 +22,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
         borderColor: "rgba(0, 0, 0, 0.1)",
       },
       "&:hover fieldset": {
-        borderColor: baseColors.mainOrange,
+        borderColor: baseColors.primaryBlue,
       },
       "&.Mui-focused fieldset": {
-        borderColor: baseColors.mainOrange,
+        borderColor: baseColors.primaryBlue,
       },
     },
     "& .MuiInputBase-input": {
@@ -37,7 +37,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
       paddingLeft: 0,
 
       "&[readonly]": {
-        color: "#a5abaf",
+        color: baseColors.primaryGrey,
       },
     },
     "& .MuiInputAdornment-positionStart": {
@@ -52,7 +52,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
     "& .Mui-error": {
       fontFamily: "PTSans-Regular",
-      whiteSpace: "pre",
+      whiteSpace: "pre-wrap",
     },
     "& .MuiOutlinedInput-inputMultiline": {
       padding: "0 14px 14px 0",

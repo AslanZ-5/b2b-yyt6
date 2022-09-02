@@ -16,14 +16,14 @@ export const useStyles = makeStyles((theme: Theme) => ({
     paddingRight: 18,
   },
   searchBtn: {
-    backgroundColor: baseColors.mainOrange,
+    backgroundColor: baseColors.primaryBlue,
     margin: "0 auto",
     width: 35,
     minWidth: 35,
     padding: 0,
     height: 35,
     "&:hover": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
   },
   listWrapper: {
@@ -49,7 +49,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   listHeader: {
     display: "flex",
     alignItems: "center",
-    borderBottom: "1px solid #eff3f8",
+    borderBottom: `1px solid ${baseColors.lightGrey}`,
   },
   listDateColumn: {
     width: 120,

@@ -34,14 +34,14 @@ const IOSSwitch = withStyles((theme: Theme) =>
         transform: "translateX(16px)",
         color: theme.palette.common.white,
         "& + $track": {
-          backgroundColor: baseColors.mainOrange,
+          backgroundColor: baseColors.primaryBlue,
           opacity: 1,
           border: "none",
         },
       },
       "&$focusVisible $thumb": {
-        color: baseColors.mainOrange,
-        border: "6px solid #fff",
+        color: baseColors.primaryBlue,
+        border: `6px solid ${baseColors.primaryWhite}`,
       },
     },
     thumb: {
@@ -51,7 +51,7 @@ const IOSSwitch = withStyles((theme: Theme) =>
     track: {
       borderRadius: 26 / 2,
       border: `1px solid ${theme.palette.grey[400]}`,
-      backgroundColor: "#e4e9f0",
+      backgroundColor: baseColors.lightGrey,
       opacity: 1,
       transition: theme.transitions.create(["background-color", "border"]),
     },

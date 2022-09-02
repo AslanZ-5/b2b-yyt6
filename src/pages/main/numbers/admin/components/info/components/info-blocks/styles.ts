@@ -8,7 +8,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "space-between",
     borderRadius: 8,
     boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-    backgroundColor: "#ffffff",
+    backgroundColor: baseColors.primaryWhite,
     padding: "20px 24px",
     marginBottom: 20,
   },
@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   infoBlockStatusValue: {
     fontFamily: "PTSans-Regular",
     fontSize: 16,
-    color: baseColors.darkOrange,
+    color: baseColors.primaryBlue,
 
     overflow: "hidden",
     textOverflow: "ellipsis",

@@ -3,8 +3,8 @@ import { baseColors } from "constants/colors";
 
 export const useStyles = makeStyles((theme: Theme) => ({
   searchBtn: {
-    backgroundColor: baseColors.mainOrange,
-    color: "#fff",
+    backgroundColor: baseColors.primaryBlue,
+    color: baseColors.primaryWhite,
     margin: "0 auto",
     width: 100,
     height: 35,
@@ -12,7 +12,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     textTransform: "none",
     fontWeight: "bold",
     "&:hover": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
   },
 }));
