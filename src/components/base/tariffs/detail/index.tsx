@@ -160,10 +160,10 @@ const TariffDetail: FC<IProps> = ({ id, isOwn }) => {
         </Grid>
       </Grid>
       {/** Услуги **/}
-      <Box width="100%" mt={4} mb={3}>
+      <Box width="100%" mt={4} mb={3} className={classes.servicesWrapper}>
         <TariffServices services={tariff?.services} />
       </Box>
-      <Box width="100%" textAlign="center">
+      <Box width="100%" textAlign="center" className={classes.moreDetailBtnWrapper}>
         <Button
           text="Подробное описание тарифа (PDF)"
           onClick={() =>

@@ -22,4 +22,11 @@ export const useStyles = makeStyles((theme: Theme) => ({
       cursor: "pointer",
     },
   },
+  mainContent: {
+    width: 800,
+
+    "@media (max-width:767px)": {
+      width: '100%'
+    },
+  },
 }));

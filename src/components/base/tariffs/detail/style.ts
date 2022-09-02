@@ -11,6 +11,11 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 20,
     lineHeight: 2,
     color: baseColors.primaryBlack,
+
+    "@media (max-width:767px)": {
+      fontSize: 16,
+      lineHeight: "21px",
+    },
   },
   description: {
     fontFamily: "PTSans-Regular",
@@ -20,6 +25,11 @@ export const useStyles = makeStyles((theme: Theme) => ({
     overflow: "hidden",
     textOverflow: "ellipsis",
     maxWidth: "90%",
+
+    "@media (max-width:767px)": {
+      fontSize: 12,
+      lineHeight: "16px",
+    },
   },
   regularPrice: {
     textAlign: "center",
@@ -39,11 +49,22 @@ export const useStyles = makeStyles((theme: Theme) => ({
     marginTop: 15,
     marginBottom: 24,
     height: 31,
+
+    "@media (max-width:767px)": {
+      display: "none",
+    },
   },
   infoWrapper: {
     display: "flex",
     alignItems: "self-start",
     flexWrap: "nowrap",
+
+    "@media (max-width:767px)": {
+      justifyContent: "center",
+      "& .MuiButton-root": {
+        width: "100%",
+      },
+    },
   },
   info: {
     fontFamily: "PTSans-Regular",
@@ -51,6 +72,19 @@ export const useStyles = makeStyles((theme: Theme) => ({
     lineHeight: 1.5,
     color: baseColors.primaryGrey,
     paddingLeft: 4,
+  },
+  servicesWrapper: {
+    "@media (max-width:767px)": {
+      marginTop: 16,
+    },
+  },
+  moreDetailBtnWrapper: {
+    "@media (max-width:767px)": {
+      "& .MuiButton-root": {
+        width: "100%",
+        lineHeight: "14px"
+      },
+    },
   },
 }));
 

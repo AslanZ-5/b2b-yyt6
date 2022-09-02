@@ -59,6 +59,5 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   indicator: {
     backgroundColor: baseColors.primaryBlue,
-    top: 23,
   },
 }));
