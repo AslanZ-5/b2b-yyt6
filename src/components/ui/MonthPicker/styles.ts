@@ -36,16 +36,16 @@ export const useStyles = makeStyles<Theme>((theme: Theme) => ({
       color: "white",
     },
     "& .MuiPickersToolbar-toolbar": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
     "& .MuiPickersDay-daySelected": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
     "& .MuiDialogActions-root": {
       display: "none",
     },
     "& .MuiPickersMonth-monthSelected": {
-      color: baseColors.mainOrange,
+      color: baseColors.primaryBlue,
     },
     "& .MuiPickersMonth-root": {
       fontFamily: "PTSans-Regular",

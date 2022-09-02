@@ -119,7 +119,7 @@ const ServicesCard: FC<IProps> = ({ setOpenBalancesDialog }) => {
                 el.all === -1 ? 1 : el.rest,
                 el.all === -1 ? 0 : el.all - el.rest,
               ],
-              backgroundColor: [baseColors.mainCyan, baseColors.lightGrey],
+              backgroundColor: [baseColors.primaryAqua, baseColors.lightGrey],
             },
           ],
         }}

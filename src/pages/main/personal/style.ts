@@ -11,7 +11,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 20,
     lineHeight: 1.25,
     letterSpacing: "0.24px",
-    color: "#131313",
+    color: baseColors.primaryBlack,
     cursor: "pointer",
     display: "flex",
     alignItems: "center",
@@ -20,7 +20,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   textButton: {
-    color: baseColors.mainOrange,
+    color: baseColors.primaryBlue,
     fontFamily: "PTSans-Bold",
     maxHeight: 25,
     textTransform: "none",
@@ -35,12 +35,13 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   tooltip: {
-    backgroundColor: "#eff3f8",
+    backgroundColor: baseColors.lightGrey,
     padding: 16,
 
     fontFamily: "PTSans-Bold",
     fontSize: 14,
-    color: "#512893",
+    color: baseColors.primaryBlue,
+    boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
   },
   pageTitle: {
     fontFamily: "PTSans-Bold",

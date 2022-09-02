@@ -28,7 +28,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   boldText: {
     fontFamily: "PTSans-Bold",
     fontSize: 16,
-    color: "#010101",
+    color: baseColors.primaryBlack,
   },
   row: {
     marginBottom: 16,
@@ -38,8 +38,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   btnExecute: {
     fontFamily: "PTSans-Bold",
-    backgroundColor: baseColors.mainOrange,
-    color: "#fff",
+    backgroundColor: baseColors.primaryBlue,
+    color: baseColors.primaryWhite,
     width: 210,
     height: 35,
     fontSize: 14,
@@ -47,13 +47,13 @@ export const useStyles = makeStyles((theme: Theme) => ({
     textAlign: "center",
     //lineHeight: "35px",
     "&:hover": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
   },
   btnCancel: {
     fontFamily: "PTSans-Bold",
-    backgroundColor: baseColors.lightOrange,
-    color: baseColors.mainOrange,
+    backgroundColor: baseColors.lightBlue,
+    color: baseColors.primaryBlue,
     width: 210,
     height: 35,
     fontSize: 14,
@@ -61,7 +61,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     textAlign: "center",
     //lineHeight: "35px",
     "&:hover": {
-      backgroundColor: baseColors.lightOrange,
+      backgroundColor: baseColors.lightBlue,
     },
   },
 }));

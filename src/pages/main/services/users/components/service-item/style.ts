@@ -5,7 +5,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   container: {
     borderRadius: 8,
     boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-    backgroundColor: "#ffffff",
+    backgroundColor: baseColors.primaryWhite,
     padding: "16px 20px",
     height: 200,
     "&:hover": {
@@ -20,7 +20,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 16,
     letterSpacing: "0.19px",
     lineHeight: 1.81,
-    color: "#131313",
+    color: baseColors.primaryBlack,
 
     marginBottom: 4,
   },
@@ -44,7 +44,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 14,
     lineHeight: 1.64,
 
-    color: baseColors.mainOrange,
+    color: baseColors.primaryBlue,
 
     "&:hover": {
       cursor: "pointer",
@@ -59,7 +59,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 20,
     lineHeight: 2.3,
 
-    color: "#010101",
+    color: baseColors.primaryBlack,
   },
   costText: {
     fontFamily: "PTSans-Regular",

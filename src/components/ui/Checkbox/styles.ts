@@ -4,10 +4,10 @@ import { baseColors } from "constants/colors";
 export const useStyles = makeStyles((theme: Theme) => ({
   checkbox: {
     "& .MuiCheckbox-root.Mui-checked": {
-      color: baseColors.mainOrange,
+      color: baseColors.primaryBlue,
     },
     "& .MuiCheckbox-root": {
-      color: "#a1a1a1",
+      color: baseColors.primaryGrey,
     },
     "& .MuiFormControlLabel-label": {
       lineHeight: 1,

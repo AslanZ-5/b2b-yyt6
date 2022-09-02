@@ -22,7 +22,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
       textTransform: "none",
       justifyContent: "center",
       padding: 0,
-      color: "#a1a1a1",
+      color: baseColors.primaryGrey,
       "& .MuiTab-wrapper": {
         zIndex: 10,
         height: "100%",
@@ -35,15 +35,14 @@ export const useStyles = makeStyles((theme: Theme) => ({
         },
       },
       "&.Mui-selected": {
-        color: baseColors.mainOrange,
+        color: baseColors.primaryBlue,
         "& .MuiTab-wrapper": {
           height: "100%",
           maxHeight: 25,
           border: "none",
           textDecoration: "none",
           "& > img": {
-            filter:
-              "invert(56%) sepia(25%) saturate(1726%) hue-rotate(335deg) brightness(101%) contrast(91%)",
+            filter: "invert(35%) sepia(57%) saturate(5841%) hue-rotate(203deg) brightness(103%) contrast(105%)"
           },
         },
       },

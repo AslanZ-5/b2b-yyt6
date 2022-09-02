@@ -1,21 +1,22 @@
 export const baseColors = {
-  purpleGradient: "linear-gradient(to right, #982eb1, #512893 62%)",
-  mainPurple: "#7c37b7",
-  lightPurple: "#F5F1F8",
+  primaryGradient: "linear-gradient(93.01deg, #54A9E2 0%, #70DBA3 100%)",
 
-  mainOrange: "#fd7d3b",
-  darkOrange: "#F37A39",
-  lightOrange: "#fff1e9",
+  brandBlue: "#4FAAE2",
+  primaryBlue: "#0077FF",
+  secondaryBlue: "#CBECFF",
+  lightBlue: "#ECF8FF",
 
-  mainCyan: "#33bcce",
-  lightCyan: "#E6F4F6",
+  primaryAqua: "#66DDBB",
+  lightAqua: "#EBFFF6",
 
   lightGreen: "#E7F7E7",
 
-  mainGrey: "#a5abaf",
+  primaryGrey: "#A5AbAF",
   secondaryGrey: "#E5E5E5",
   lightGrey: "#F7F9FC",
 
-  mainViolet: "#512893",
-  lightViolet: "#eff3f8",
+  primaryBlack: "#1F2A31",
+  primaryWhite: "#FFFFFF",
+
+  error: "#F44336",
 };

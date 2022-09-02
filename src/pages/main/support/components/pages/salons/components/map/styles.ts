@@ -4,8 +4,8 @@ import { baseColors } from "constants/colors";
 export const useStyles = makeStyles((theme: Theme) => ({
   root: {
     borderRadius: "50%",
-    backgroundColor: "#FFF",
-    border: `4px solid ${baseColors.mainPurple}`,
+    backgroundColor: baseColors.primaryWhite,
+    border: `4px solid ${baseColors.primaryAqua}`,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

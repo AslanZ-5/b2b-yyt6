@@ -21,7 +21,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
         textTransform: "capitalize",
         fontFamily: "PTSans-Regular",
         display: "flex",
-        color: "#131313",
+        color: baseColors.primaryBlack,
         flexDirection: "row",
         justifyContent: "flex-start",
         "& img": {
@@ -46,8 +46,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
       },
     },
     "& .MuiButtonBase-root.MuiTab-root.MuiTab-textColorInherit.Mui-selected": {
-      color: "#fef7f1",
-      backgroundColor: "#fef7f1",
+      color: baseColors.secondaryGrey,
+      backgroundColor: baseColors.secondaryGrey,
       fontWeight: "bold",
       "& img": {
         filter:
@@ -76,8 +76,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   activeTab: {
-    borderRight: `2px solid ${baseColors.darkOrange}`,
-    backgroundColor: "#fef7f1",
+    borderRight: `2px solid ${baseColors.primaryAqua}`,
+    backgroundColor: baseColors.lightAqua,
 
     "& .MuiTab-wrapper": {
       fontFamily: "PTSans-Bold !important",
@@ -93,7 +93,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     justifyContent: "flex-start",
     paddingLeft: 35,
-    color: baseColors.mainOrange,
+    color: baseColors.primaryBlue,
     height: 52,
     marginTop: 20,
     fontSize: 16,

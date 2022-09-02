@@ -6,7 +6,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Bold",
     fontSize: 18,
     textDecoration: "none",
-    color: baseColors.mainOrange,
+    color: baseColors.primaryBlue,
     marginBottom: 3,
   },
   text: {

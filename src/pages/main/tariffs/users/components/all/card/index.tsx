@@ -95,8 +95,8 @@ const TariffCard: FC<IProps> = ({ tariff }) => {
               text="Подробнее"
               onClick={() => {}}
               additionalClasses={{
-                color: baseColors.darkOrange,
-                backgroundColor: baseColors.lightOrange,
+                color: baseColors.primaryBlue,
+                backgroundColor: baseColors.lightBlue,
                 width: "100%",
               }}
             />

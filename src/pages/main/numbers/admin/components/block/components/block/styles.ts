@@ -9,6 +9,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
   checkBoxLink: {
     fontFamily: "PTSans-Bold",
     fontSize: 16,
-    color: baseColors.mainOrange,
+    color: baseColors.primaryBlue,
   },
 }));

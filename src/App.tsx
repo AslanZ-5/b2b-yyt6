@@ -15,11 +15,11 @@ const App: React.FC = () => {
   const { loading: userLoading, user } = useAppSelector((state) => state.user);
   const userError = useAppSelector((state) => state.user.error);
 
-  axios.defaults.headers.common["Platform"] = "web";
-  useCheckAuth();
-  useGlobalErrorCatcher();
+  // axios.defaults.headers.common["Platform"] = "web";
+  // useCheckAuth();
+  // useGlobalErrorCatcher();
 
-  if (userError || userLoading || !user) return <PageProgress />;
+  // if (userError || userLoading || !user) return <PageProgress />;
 
   return (
     <>

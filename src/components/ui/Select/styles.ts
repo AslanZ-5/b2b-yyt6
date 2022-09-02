@@ -9,7 +9,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     border: "1px solid rgba(0, 0, 0, 0.1)",
     height: 48,
     "&:hover": {
-      borderColor: baseColors.mainOrange,
+      borderColor: baseColors.primaryBlue,
     },
     "&::before": {
       borderBottom: "none",
@@ -45,7 +45,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     "&.MuiListItem-root.Mui-selected": {
       fontFamily: "PTSans-Bold",
       fontSize: 16,
-      backgroundColor: "#fef7f1",
+      backgroundColor: baseColors.lightGrey,
     },
   },
   emptyOption: {

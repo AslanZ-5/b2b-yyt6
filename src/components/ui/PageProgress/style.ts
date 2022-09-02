@@ -12,7 +12,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
     },
     spinner: {
-      color: baseColors.mainPurple,
+      color: baseColors.primaryBlue,
     },
   })
 );

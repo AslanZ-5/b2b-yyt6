@@ -42,7 +42,7 @@ export const useStyles = makeStyles<Theme, StyleProps>((theme) => ({
       fontFamily: "PTSans-Regular",
       display: "block",
       textAlign: "center",
-      color: "#9fa4a8",
+      color: baseColors.primaryGrey,
     },
   },
   addDoughnut: {
@@ -79,7 +79,7 @@ export const useStyles = makeStyles<Theme, StyleProps>((theme) => ({
       },
       "& svg": {
         transition: "0.5s",
-        color: baseColors.mainCyan,
+        color: baseColors.primaryAqua,
       },
     },
   },
@@ -88,8 +88,8 @@ export const useStyles = makeStyles<Theme, StyleProps>((theme) => ({
     marginTop: 15,
     fontFamily: "PTSans-Bold",
     textTransform: "none",
-    backgroundColor: baseColors.lightOrange,
-    color: baseColors.mainOrange,
+    backgroundColor: baseColors.lightBlue,
+    color: baseColors.primaryBlue,
     "@media (min-width: 1020px)": {
       display: "none",
     },

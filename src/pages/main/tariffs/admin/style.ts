@@ -22,8 +22,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   buttonNext: {
     fontFamily: "PTSans-Bold",
-    backgroundColor: baseColors.mainOrange,
-    color: "#fff",
+    backgroundColor: baseColors.primaryBlue,
+    color: baseColors.primaryWhite,
     width: 100,
     height: 35,
     fontSize: 14,
@@ -31,7 +31,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     textAlign: "center",
     //lineHeight: "35px",
     "&:hover": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
   },
   backLink: {
@@ -39,7 +39,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     alignItems: "center",
     fontFamily: "PTSans-Bold",
     fontSize: 14,
-    color: "#f68537",
+    color: baseColors.primaryBlue,
     marginLeft: -9,
     "&:hover": {
       cursor: "pointer",

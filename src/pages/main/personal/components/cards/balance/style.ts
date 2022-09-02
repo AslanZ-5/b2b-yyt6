@@ -1,4 +1,5 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from "constants/colors";
 
 export const useStyles = makeStyles((theme: Theme) => ({
   defaultBlock: {
@@ -14,7 +15,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     borderRadius: 10,
 
     height: 196,
-    color: "#fff",
+    color: baseColors.primaryWhite,
   },
   defaultTitle: {
     width: "80%",
@@ -29,7 +30,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   balanceCard: {
     boxSizing: "border-box",
     width: "100%",
-    color: "#fff",
+    color: baseColors.primaryWhite,
     backgroundColor: "transparent",
     boxShadow: "none",
     overflow: "visible",

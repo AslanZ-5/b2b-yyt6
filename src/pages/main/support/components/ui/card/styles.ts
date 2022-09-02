@@ -1,10 +1,11 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from "constants/colors";
 
 export const useStyles = makeStyles((theme: Theme) => ({
   container: {
     borderRadius: 8,
     boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-    backgroundColor: "#ffffff",
+    backgroundColor: baseColors.primaryWhite,
     padding: "20px 24px 21px 20px",
     "&:hover": {
       cursor: "pointer",
@@ -22,7 +23,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   description: {
     fontFamily: "PTSans-Regular",
     fontSize: 16,
-    color: "#a5abaf",
+    color: baseColors.primaryGrey,
     paddingLeft: 40,
   },
 }));

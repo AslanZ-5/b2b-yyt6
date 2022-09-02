@@ -1,4 +1,5 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from "constants/colors";
 
 export const useStyles = makeStyles((theme: Theme) => ({
   tariffCard: {
@@ -30,7 +31,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   subTitle: {
     fontFamily: "PTSans-Bold",
     fontSize: 18,
-    color: "#131313",
+    color: baseColors.primaryBlack,
     display: "flex",
     alignItems: "center",
   },

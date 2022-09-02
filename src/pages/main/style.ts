@@ -1,4 +1,5 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from 'constants/colors';
 
 export const useStyles = makeStyles((theme: Theme) => ({
   leftContent: {
@@ -24,7 +25,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   error: {
     fontFamily: "PTSans-Regular",
-    color: "#f44336",
+    color: baseColors.error,
     marginBottom: 10,
     fontSize: "0.75rem",
   },

@@ -33,13 +33,13 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Bold",
     fontSize: 14,
     marginBottom: 12,
-    color: "#f44336",
+    color: baseColors.error,
   },
   timer: {
     fontFamily: "PTSans-Bold",
     fontSize: 14,
     marginBottom: 20,
-    color: baseColors.mainOrange,
+    color: baseColors.primaryBlue,
   },
   passwordInputImg: {
     display: "flex",

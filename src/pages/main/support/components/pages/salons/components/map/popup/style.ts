@@ -32,11 +32,11 @@ export const useStyles = makeStyles({
   popupDay: {
     fontFamily: "PTSans-Regular",
     fontSize: 14,
-    color: baseColors.mainGrey,
+    color: baseColors.primaryGrey,
   },
   popupHours: {
     fontFamily: "PTSans-Regular",
     fontSize: 14,
-    color: "#141414",
+    color: baseColors.primaryBlack,
   },
 });

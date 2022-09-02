@@ -21,7 +21,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       },
     },
     headerContainer: {
-      background: baseColors.purpleGradient,
+      background: baseColors.primaryGradient,
     },
     toolbar: {
       width: "100%",
@@ -62,12 +62,12 @@ export const useStyles = makeStyles((theme: Theme) =>
       },
       "& .MuiSelect-select.MuiSelect-select": {
         fontFamily: "PTSans-Bold",
-        color: "#fff",
+        color: baseColors.primaryWhite,
         fontSize: 14,
         paddingLeft: 16,
       },
       "& .MuiSvgIcon-root.MuiSelect-icon": {
-        color: "#fff",
+        color: baseColors.primaryWhite,
       },
       "@media (max-width:767px)": {
         "& .MuiSelect-select.MuiSelect-select": {
@@ -101,7 +101,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       borderTop: `1px solid ${baseColors.secondaryGrey}`,
       "&.Mui-selected.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button.Mui-selected, &.Mui-selected.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button.Mui-selected:hover, &.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button:hover":
         {
-          background: "#fff",
+          background: baseColors.primaryWhite,
         },
     },
     lastSelectItem: {
@@ -110,16 +110,16 @@ export const useStyles = makeStyles((theme: Theme) =>
       padding: 10,
       display: "flex",
       justifyContent: "center",
-      color: baseColors.mainOrange,
+      color: baseColors.primaryBlue,
       height: 66,
       borderTop: `1px solid ${baseColors.secondaryGrey}`,
       "&.Mui-selected.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button.Mui-selected, &.MuiMenuItem-gutters.MuiListItem-gutters.MuiListItem-button:hover":
         {
-          background: "#fff",
+          background: baseColors.primaryWhite,
         },
     },
     exitMenu: {
-      background: "#fff",
+      background: baseColors.primaryWhite,
       padding: 0,
       minWidth: 251,
       borderRadius: 5,
@@ -145,7 +145,7 @@ export const useStyles = makeStyles((theme: Theme) =>
     },
     textBtn: {
       padding: 0,
-      color: baseColors.mainOrange,
+      color: baseColors.primaryBlue,
       fontFamily: "PTSans-Bold",
       width: "100%",
       minHeight: "65px",
@@ -157,7 +157,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       fontSize: 16,
       lineHeight: 2,
       letterSpacing: 0.19,
-      color: "#ffffff",
+      color: baseColors.primaryWhite,
       paddingLeft: 60,
       maxWidth: 245,
       overflow: "hidden",

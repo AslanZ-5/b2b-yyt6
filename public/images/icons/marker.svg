@@ -1,21 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="53.706" height="59.631" viewBox="0 0 53.706 59.631">
-    <defs>
-        <linearGradient id="linear-gradient" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
-            <stop offset="0" stop-color="#7c37b7"/>
-            <stop offset="1" stop-color="#ce33c8"/>
-        </linearGradient>
-        <filter id="Объединение_3" width="53.706" height="59.631" x="0" y="0" filterUnits="userSpaceOnUse">
-            <feOffset dy="3"/>
-            <feGaussianBlur result="blur" stdDeviation="3"/>
-            <feFlood flood-color="#7c37b7" flood-opacity=".431"/>
-            <feComposite in2="blur" operator="in"/>
-            <feComposite in="SourceGraphic"/>
-        </filter>
-    </defs>
-    <g id="Сгруппировать_12256" data-name="Сгруппировать 12256" transform="translate(-142.658 -303.259)">
-        <g filter="url(#Объединение_3)" transform="translate(142.66 303.26)">
-            <path id="Объединение_3-2" fill="url(#linear-gradient)" d="M15.151 40.073l-3.118-5.69A17.651 17.651 0 0 1 17.853 0 17.651 17.651 0 0 1 23.5 34.441l-3.086 5.631a3 3 0 0 1-5.261 0z" data-name="Объединение 3" transform="translate(9 6)"/>
-        </g>
-        <circle id="Эллипс_493" cx="5.5" cy="5.5" r="5.5" fill="#fff" data-name="Эллипс 493" transform="translate(164.066 321.189)"/>
-    </g>
-</svg>
+<svg
+  width="89"
+  height="101"
+  viewBox="0 0 89 101"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+><g filter="url(#a)"><path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M39.547 15.622a24 24 0 0 0-24 23.76c0 16.41 21.076 34.676 22.045 35.515l.005.005a3 3 0 0 0 3.9 0c1.05-.78 22.05-19.08 22.05-35.52a24 24 0 0 0-24-23.76Zm12.669 15.046-16.832-.038-.01 4.215 7.888.018v.39c-1.849 1.481-7.905 7.351-7.934 20.66l4.206.009s-.841-16.853 12.663-21.039h.01l.009-4.215Zm-20.024 4.098-2.123-.005-.007 3.188-3.18-.007-.004 2.126 3.18.007-.008 3.186 2.123.005.007-3.186 3.185.007.005-2.126-3.185-.007.007-3.188Z"
+      fill="url(#b)"
+    /><path
+      d="m35.384 30.63 16.832.038-.01 4.215h-.009c-13.504 4.185-12.663 21.039-12.663 21.039l-4.206-.009c.029-13.309 6.085-19.179 7.933-20.66l.001-.39-7.888-.018.01-4.215Z"
+      fill="#fff"
+    /><path
+      d="m30.07 34.76 2.122.006-.007 3.188 3.185.007-.005 2.126-3.185-.007-.007 3.186-2.123-.005.007-3.186-3.179-.007.005-2.126 3.18.007.006-3.188Z"
+      fill="#fff"
+    /></g><defs><linearGradient
+      id="b"
+      x1="15.547"
+      y1="15.622"
+      x2="65.979"
+      y2="17.74"
+      gradientUnits="userSpaceOnUse"
+    ><stop stop-color="#54A9E2" /><stop
+        offset="1"
+        stop-color="#70DBA3"
+      /></linearGradient><filter
+      id="a"
+      x=".547"
+      y=".622"
+      width="88"
+      height="100"
+      filterUnits="userSpaceOnUse"
+      color-interpolation-filters="sRGB"
+    ><feFlood flood-opacity="0" result="BackgroundImageFix" /><feColorMatrix
+        in="SourceAlpha"
+        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        result="hardAlpha"
+      /><feOffset dx="5" dy="5" /><feGaussianBlur
+        stdDeviation="10"
+      /><feComposite in2="hardAlpha" operator="out" /><feColorMatrix
+        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"
+      /><feBlend
+        in2="BackgroundImageFix"
+        result="effect1_dropShadow_296_6784"
+      /><feBlend
+        in="SourceGraphic"
+        in2="effect1_dropShadow_296_6784"
+        result="shape"
+      /></filter></defs></svg>

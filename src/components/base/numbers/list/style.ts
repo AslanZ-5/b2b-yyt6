@@ -21,7 +21,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   listHeader: {
     display: "flex",
     alignItems: "center",
-    borderBottom: "1px solid #eff3f8",
+    borderBottom: `1px solid ${baseColors.lightGrey}`,
     fontFamily: "PTSans-Regular",
   },
   checkboxField: {
@@ -37,12 +37,12 @@ export const useStyles = makeStyles((theme: Theme) => ({
     minWidth: 180,
   },
   phoneFieldAdditional: {
-    color: "#512893",
+    color: baseColors.brandBlue,
     fontFamily: "PTSans-Bold",
     "& span": {
       "&:hover": {
         cursor: "pointer",
-        backgroundColor: "#eff3f8",
+        backgroundColor: baseColors.lightGrey,
         padding: 5,
       },
     },
@@ -79,19 +79,19 @@ export const useStyles = makeStyles((theme: Theme) => ({
     padding: 0,
 
     "&.Mui-checked": {
-      color: baseColors.mainOrange,
+      color: baseColors.primaryBlue,
     },
   },
   searchBtn: {
     fontFamily: "PTSans-Bold",
-    backgroundColor: baseColors.mainOrange,
-    color: "#fff",
+    backgroundColor: baseColors.primaryBlue,
+    color: baseColors.primaryWhite,
     width: 100,
     height: 35,
     fontSize: 14,
     textTransform: "none",
     "&:hover": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
   },
   numbersInfo: {

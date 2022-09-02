@@ -1,4 +1,5 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from 'constants/colors';
 
 export const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -14,7 +15,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   title: {
     fontFamily: "PTSans-Bold",
     fontSize: 22,
-    color: "#131313",
+    color: baseColors.primaryBlack,
   },
   button: {
     "&:hover": {

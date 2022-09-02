@@ -1,4 +1,5 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from 'constants/colors';
 
 export const useStyles = makeStyles((theme: Theme) => ({
   mainImg: {
@@ -9,7 +10,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Bold",
     fontSize: 20,
     lineHeight: 2,
-    color: "#131313",
+    color: baseColors.primaryBlack,
   },
   description: {
     fontFamily: "PTSans-Regular",
@@ -30,7 +31,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Bold",
     fontSize: 20,
     lineHeight: 2,
-    color: "#010101",
+    color: baseColors.primaryBlack,
   },
   slider: {
     width: "92%",
@@ -48,7 +49,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Regular",
     fontSize: 14,
     lineHeight: 1.5,
-    color: "#a5abaf",
+    color: baseColors.primaryGrey,
     paddingLeft: 4,
   },
 }));

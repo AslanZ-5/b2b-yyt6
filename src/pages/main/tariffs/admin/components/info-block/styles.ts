@@ -1,11 +1,12 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from "constants/colors";
 
 export const useStyles = makeStyles((theme: Theme) => ({
   container: {
     padding: 16,
     borderRadius: 8,
     boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-    backgroundColor: "#ffffff",
+    backgroundColor: baseColors.primaryWhite,
   },
   header: {
     display: "flex",

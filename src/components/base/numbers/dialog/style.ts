@@ -1,4 +1,5 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { baseColors } from 'constants/colors';
 
 export const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -13,7 +14,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     width: "100%",
   },
   listHeader: {
-    borderBottom: "1px solid #eff3f8",
+    borderBottom: `1px solid ${baseColors.lightGrey}`,
   },
   listItem: {
     fontFamily: "PTSans-Regular",

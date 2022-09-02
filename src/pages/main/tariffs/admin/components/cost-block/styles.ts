@@ -6,7 +6,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     padding: 16,
     borderRadius: 8,
     boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-    backgroundColor: "#ffffff",
+    backgroundColor: baseColors.primaryWhite,
 
     display: "flex",
     alignItems: "center",
@@ -24,12 +24,12 @@ export const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "PTSans-Bold",
     fontSize: 21,
     lineHeight: 2.19,
-    color: "#010101",
+    color: baseColors.primaryBlack,
   },
   btn: {
     fontFamily: "PTSans-Bold",
-    backgroundColor: baseColors.mainOrange,
-    color: "#fff",
+    backgroundColor: baseColors.primaryBlue,
+    color: baseColors.primaryWhite,
     width: 134,
     height: 35,
     fontSize: 14,
@@ -37,7 +37,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     textAlign: "center",
     //lineHeight: "35px",
     "&:hover": {
-      backgroundColor: baseColors.mainOrange,
+      backgroundColor: baseColors.primaryBlue,
     },
   },
 }));

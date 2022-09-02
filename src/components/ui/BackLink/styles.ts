@@ -13,6 +13,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
   backLinkText: {
     fontFamily: "PTSans-Bold",
     fontSize: 14,
-    color: baseColors.mainOrange,
+    color: baseColors.primaryBlue,
   },
 }));

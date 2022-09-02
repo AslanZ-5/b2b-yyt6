@@ -6,14 +6,14 @@ export const useStyles = makeStyles((theme: Theme) => ({
     padding: 20,
     borderRadius: 8,
     boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-    backgroundColor: "#ffffff",
+    backgroundColor: baseColors.primaryWhite,
     marginBottom: 30,
     "&:hover": {
       cursor: "pointer",
     },
   },
   highlightContainer: {
-    border: `1px solid ${baseColors.mainOrange}`,
+    border: `1px solid ${baseColors.primaryBlue}`,
   },
   header: {
     width: "100%",
