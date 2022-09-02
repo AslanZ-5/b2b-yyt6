@@ -45,7 +45,7 @@ const InfoDialog: FC<IProps> = ({ open, setOpen, tariff, isOwn }) => {
                 <CloseIcon />
               </div>
             </Grid>
-            <Box width="800px">
+            <Box className={classes.mainContent}>
               <CustomScrollbar showVertical height="70vh">
                 <Box width="95%">
                   <TariffDetail id={tariff.id.toString()} isOwn={isOwn} />
