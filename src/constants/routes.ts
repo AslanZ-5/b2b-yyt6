@@ -13,7 +13,7 @@ export const routes = {
   support: {
     base: "/support",
     questions: "/support/questions",
-    salons: "/support/salons",
+    // salons: "/support/salons",
     contactCenter: "/support/contact-center",
     feedback: "/support/feedback",
   },

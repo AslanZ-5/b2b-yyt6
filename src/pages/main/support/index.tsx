@@ -8,7 +8,6 @@ import { routes } from "constants/routes";
 
 const SupportList = lazy(() => import("./components/pages/list"));
 const Feedback = lazy(() => import("./components/pages/feedback"));
-const Salons = lazy(() => import("./components/pages/salons"));
 const Questions = lazy(() => import("./components/pages/questions"));
 const ContactsCenter = lazy(() => import("./components/pages/contacts-center"));
 
@@ -29,10 +28,10 @@ const Support: FC = () => {
           {BackComponent}
           <Feedback />
         </Route>
-        <Route path={routes.support.salons}>
+        {/* <Route path={routes.support.salons}>
           {BackComponent}
           <Salons />
-        </Route>
+        </Route> */}
         <Route path={routes.support.questions}>
           {BackComponent}
           <Questions />
