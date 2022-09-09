@@ -9,12 +9,12 @@ const cards = [
     imgSrc: "/images/support/question.svg",
     link: routes.support.questions,
   },
-  {
-    title: "Салоны продаж и обслуживания",
-    description: "Салоны обслуживания на карте",
-    imgSrc: "/images/support/compass.svg",
-    link: routes.support.salons,
-  },
+  // {
+  //   title: "Салоны продаж и обслуживания",
+  //   description: "Салоны обслуживания на карте",
+  //   imgSrc: "/images/support/compass.svg",
+  //   link: routes.support.salons,
+  // },
   {
     title: "Контактный центр",
     description: "Задать вопрос оператору",
