@@ -1,9 +1,11 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 import { useAppDispatch } from "store";
 import { fetchUser } from "store/slices/user";
 import { INDIVIDUAL_HOST } from "constants/api";
+import { routes } from "constants/routes";
+import Auth from "pages/auth";
 
 /**
  * Хук авторизации
@@ -13,13 +15,15 @@ import { INDIVIDUAL_HOST } from "constants/api";
 export const useCheckAuth = () => {
   const queryParams = useLocation().search;
   const dispatch = useAppDispatch();
+  const history = useHistory()
 
   useEffect(() => {
     const { token, refresh_token } = getUserData(queryParams);
     if (token) {
       dispatch(fetchUser(token, refresh_token));
     } else {
-      window.location.replace(INDIVIDUAL_HOST);
+      history.push(`${routes.personal.auth}`);
+      
     }
   }, [dispatch, queryParams]);
 };

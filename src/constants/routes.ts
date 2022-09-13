@@ -1,5 +1,6 @@
 export const routes = {
   personal: {
+    auth: "/auth",
     base: "/personal",
     admin: {
       tariffs: {

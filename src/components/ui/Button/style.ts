@@ -3,6 +3,8 @@ import { baseColors } from "constants/colors";
 
 export type StylesProps = {
   width?: string;
+  opacity?: string;
+  borderRadius?: string;
   height?: string;
   color?: string;
   backgroundColor?: string;

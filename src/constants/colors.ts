@@ -16,7 +16,8 @@ export const baseColors = {
   lightGrey: "#F7F9FC",
 
   primaryBlack: "#1F2A31",
-  primaryWhite: "#FFFFFF",
+  primaryWhite: "#FFFFFF",  
 
   error: "#F44336",
+  fieldError:"#FF6F32",
 };

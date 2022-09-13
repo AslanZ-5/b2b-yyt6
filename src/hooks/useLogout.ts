@@ -4,18 +4,21 @@ import axios from "axios";
 import { useAppDispatch, useAppSelector } from "store";
 import { setAccounts, setLoading, setUser, fetchUser } from "store/slices/user";
 import { INDIVIDUAL_HOST } from "constants/api";
+import { useHistory } from "react-router-dom";
+import { routes } from "constants/routes";
 
 export const useLogout = () => {
   const dispatch = useAppDispatch();
   const { user, accounts } = useAppSelector((state) => state.user);
-
+  const history = useHistory()
   const logoutFromAll = useCallback(() => {
     dispatch(setLoading(true));
     dispatch(setUser(null));
     dispatch(setAccounts([]));
     localStorage.clear();
     delete axios.defaults.headers.common["Authorization"];
-    window.location.replace(INDIVIDUAL_HOST);
+    //window.location.replace(INDIVIDUAL_HOST);
+    history.push(routes.personal.auth)
   }, [dispatch]);
 
   const logoutFromCurrent = useCallback(() => {
