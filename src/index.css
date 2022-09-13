@@ -17,6 +17,13 @@ body {
 }
 
 @font-face {
+  font-family: "SF Pro Display Regular";
+  src: url(fonts/SFProDisplay/SFProDisplayRegular/SFProDisplayRegular.ttf),
+    url(fonts/SFProDisplay/SFProDisplayRegular/SFProDisplayRegular.eot),
+    url(fonts/SFProDisplay/SFProDisplayRegular/SFProDisplayRegular.woff);
+}
+
+@font-face {
   font-family: "PTSans-Regular";
   src: url(fonts/PTSans/PTSans-Regular/PTSans-Regular.ttf),
     url(fonts/PTSans/PTSans-Regular/PTSans-Regular.eot),

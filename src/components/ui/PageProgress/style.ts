@@ -6,10 +6,11 @@ export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: "100%",
-      height: "80vh",
+      height: "100%",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      boxSizing: "border-box",
     },
     spinner: {
       color: baseColors.primaryBlue,

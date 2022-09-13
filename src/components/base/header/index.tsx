@@ -46,29 +46,36 @@ const Header: React.FC = () => {
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null
   );
-  const { values, handleInputValue, errors, formIsValid, clearFields, clearField } =
-    useForm({
-      initialValues: { login: "", password: "" },
-      rules: {
-        login: {
-          required: true,
-          pattern: /^([0-9]{3})\s([0-9]{3})\s([0-9]{2})\s([0-9]{2})+$/,
-        },
-        password: { required: true, pattern: /^[a-zA-Z0-9@*#]{8,15}$/ },
+  const {
+    values,
+    handleInputValue,
+    errors,
+    formIsValid,
+    clearFields,
+    clearField,
+  } = useForm({
+    initialValues: { login: "", password: "" },
+    rules: {
+      login: {
+        required: true,
+        pattern: /^([0-9]{3})\s([0-9]{3})\s([0-9]{2})\s([0-9]{2})+$/,
       },
-    });
+      password: { required: true, pattern: /^[a-zA-Z0-9@*#]{8,15}$/ },
+    },
+  });
 
-  const drawerHandler =
-    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
-      }
-      setOpenDrawer(open);
-    };
+  const drawerHandler = (open: boolean) => (
+    event: React.KeyboardEvent | React.MouseEvent
+  ) => {
+    if (
+      event.type === "keydown" &&
+      ((event as React.KeyboardEvent).key === "Tab" ||
+        (event as React.KeyboardEvent).key === "Shift")
+    ) {
+      return;
+    }
+    setOpenDrawer(open);
+  };
 
   const openExitPopper = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -117,195 +124,203 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <InfoDialog
-        type="error"
-        show={showExitDialog}
-        title="Вы действительно хотите выйти из всех аккаунтов?"
-        handleClose={closeExitDialog}
-        upButton={{
-          text: "Да",
-          callback: logoutFromAll,
-        }}
-        downButton={{
-          callback: closeExitDialog
-        }}
-      />
-      <InfoDialog
-        type="error"
-        title="Вы уверены, что хотите выйти из аккаунта?"
-        description={`+7${user?.msisdn}`}
-        show={showExitAccountDialog}
-        handleClose={closeExitAccountDialog}
-        upButton={{
-          text: "Да",
-          callback: logoutFromCurrent,
-        }}
-        downButton={{
-          callback: closeExitAccountDialog
-        }}
-      />
-      <AddAccountDialog
-        open={showAddAccountDialog}
-        setOpen={setShowAddAccountDialog}
-        showOtpDialog={setShowOtpDialog}
-        formValues={{
-          values,
-          handleInputValue,
-          errors,
-          formIsValid,
-          clearField
-        }}
-      />
-      <OtpDialog
-        open={showOtpDialog}
-        setOpen={setShowOtpDialog}
-        showAddAccountDialog={setShowAddAccountDialog}
-        login={values.login}
-      />
-      <MobileDrawer open={openDrawer} setOpen={drawerHandler}>
-        <NavTabs
-          handleOpenExitDialog={openExitDialog}
-          closeDrawer={closeDrawer}
+      <div hidden={!user}>
+        <InfoDialog
+          type="error"
+          show={showExitDialog}
+          title="Вы действительно хотите выйти из всех аккаунтов?"
+          handleClose={closeExitDialog}
+          upButton={{
+            text: "Да",
+            callback:() => {
+              logoutFromAll();
+              closeExitDialog();
+            },
+          }}
+          downButton={{
+            callback: closeExitDialog,
+          }}
         />
-      </MobileDrawer>
-      <div className={classes.headerContainer} id="appHeaderContainer">
-        <div className={classes.root} id="appHeader">
-          <AppBar elevation={0} position="static">
-            <Grid container justify="center">
-              <Grid container item xs={11} lg={9}>
-                <Toolbar className={classes.toolbar}>
-                  <Grid container alignItems="center">
-                    <Grid item xs={6} sm={2}>
-                      <img
-                        style={{ cursor: "pointer" }}
-                        onClick={() => history.push("/")}
-                        src="/images/logo.svg"
-                        alt="logo"
-                        id="appLogo"
-                      />
-                    </Grid>
-                    <Grid
-                      container
-                      justify="space-between"
-                      alignItems="center"
-                      item
-                      xs={6}
-                      sm={10}
-                    >
-                      <div className={classes.companyName} id="companyName">
-                        {user?.orgName || ""}
-                      </div>
-                      <div
-                        style={{ display: "flex", alignItems: "center" }}
-                        id="accountsSelect"
+        <InfoDialog
+          type="error"
+          title="Вы уверены, что хотите выйти из аккаунта?"
+          description={`+7${user?.msisdn}`}
+          show={showExitAccountDialog}
+          handleClose={closeExitAccountDialog}
+          upButton={{
+            text: "Да",
+            callback: () => {
+              logoutFromCurrent();
+              closeExitAccountDialog();
+            },
+          }}
+          downButton={{
+            callback: closeExitAccountDialog,
+          }}
+        />
+        <AddAccountDialog
+          open={showAddAccountDialog}
+          setOpen={setShowAddAccountDialog}
+          showOtpDialog={setShowOtpDialog}
+          formValues={{
+            values,
+            handleInputValue,
+            errors,
+            formIsValid,
+            clearField,
+          }}
+        />
+        <OtpDialog
+          open={showOtpDialog}
+          setOpen={setShowOtpDialog}
+          showAddAccountDialog={setShowAddAccountDialog}
+          login={values.login}
+        />
+        <MobileDrawer open={openDrawer} setOpen={drawerHandler}>
+          <NavTabs
+            handleOpenExitDialog={openExitDialog}
+            closeDrawer={closeDrawer}
+          />
+        </MobileDrawer>
+        <div className={classes.headerContainer} id="appHeaderContainer">
+          <div className={classes.root} id="appHeader">
+            <AppBar elevation={0} position="static">
+              <Grid container justify="center">
+                <Grid container item xs={11} lg={9}>
+                  <Toolbar className={classes.toolbar}>
+                    <Grid container alignItems="center">
+                      <Grid item xs={6} sm={2}>
+                        <img
+                          style={{ cursor: "pointer" }}
+                          onClick={() => history.push("/")}
+                          src="/images/logo.svg"
+                          alt="logo"
+                          id="appLogo"
+                        />
+                      </Grid>
+                      <Grid
+                        container
+                        justify="space-between"
+                        alignItems="center"
+                        item
+                        xs={6}
+                        sm={10}
                       >
-                        <Select
-                          MenuProps={{
-                            anchorOrigin: {
-                              vertical: "bottom",
-                              horizontal: "center",
-                            },
-                            transformOrigin: {
-                              vertical: "top",
-                              horizontal: "center",
-                            },
-                            getContentAnchorEl: null,
-                          }}
-                          renderValue={(value: any) => <span>{value}</span>}
-                          IconComponent={KeyboardArrowDownIcon}
-                          className={classes.phoneNumberSelect}
-                          value={number}
-                          onChange={handleChange}
+                        <div className={classes.companyName} id="companyName">
+                          {user?.orgName || ""}
+                        </div>
+                        <div
+                          style={{ display: "flex", alignItems: "center" }}
+                          id="accountsSelect"
                         >
-                          {accounts?.map((user) => (
-                            <MenuItem
-                              key={user.msisdn}
-                              className={classes.selectItem}
-                              value={user.msisdn}
-                            >
-                              +7{user.msisdn}
-                              <Typography className={classes.selectSubTitle}>
-                                {user.full_name}
-                              </Typography>
-                            </MenuItem>
-                          ))}
-
-                          <MenuItem
-                            onClick={() => setShowAddAccountDialog(true)}
-                            className={classes.lastSelectItem}
+                          <Select
+                            MenuProps={{
+                              anchorOrigin: {
+                                vertical: "bottom",
+                                horizontal: "center",
+                              },
+                              transformOrigin: {
+                                vertical: "top",
+                                horizontal: "center",
+                              },
+                              getContentAnchorEl: null,
+                            }}
+                            renderValue={(value: any) => <span>{value}</span>}
+                            IconComponent={KeyboardArrowDownIcon}
+                            className={classes.phoneNumberSelect}
                             value={number}
+                            onChange={handleChange}
                           >
-                            + Добавить аккаунт
-                          </MenuItem>
-                        </Select>
+                            {accounts?.map((user) => (
+                              <MenuItem
+                                key={user.msisdn}
+                                className={classes.selectItem}
+                                value={user.msisdn}
+                              >
+                                +7{user.msisdn}
+                                <Typography className={classes.selectSubTitle}>
+                                  {user.full_name}
+                                </Typography>
+                              </MenuItem>
+                            ))}
 
-                        <Button
-                          onClick={openExitPopper}
-                          className={classes.exitBtn}
-                          variant="contained"
-                          id="logoutButton"
-                        >
-                          <img src="/images/icons/logout.svg" alt="logout" />
-                        </Button>
-                        <Popper
-                          open={exitPopper}
-                          anchorEl={anchorEl}
-                          placement="bottom"
-                          transition
-                          className={classes.logoutPopper}
-                        >
-                          {({ TransitionProps }) => (
-                            <ClickAwayListener
-                              onClickAway={() => setExitPopper(false)}
+                            <MenuItem
+                              onClick={() => setShowAddAccountDialog(true)}
+                              className={classes.lastSelectItem}
+                              value={number}
                             >
-                              <Fade {...TransitionProps} timeout={350}>
-                                <ul className={classes.exitMenu}>
-                                  <li
-                                    onClick={openExitAccountDialog}
-                                    className={classes.exitMenuItem}
-                                    id="logoutFromCurrentAccount"
-                                  >
-                                    <Typography>
-                                      Выйти из текущего аккаунта
-                                    </Typography>
-                                    <Typography>
-                                      {user?.msisdn
-                                        ? formatPhone1(user?.msisdn || "")
-                                        : ""}
-                                    </Typography>
-                                  </li>
-                                  <li
-                                    className={classes.exitMenuItem}
-                                    id="logoutFromAllAccount"
-                                  >
-                                    <Button
-                                      onClick={openExitDialog}
-                                      className={classes.textBtn}
+                              + Добавить аккаунт
+                            </MenuItem>
+                          </Select>
+
+                          <Button
+                            onClick={openExitPopper}
+                            className={classes.exitBtn}
+                            variant="contained"
+                            id="logoutButton"
+                          >
+                            <img src="/images/icons/logout.svg" alt="logout" />
+                          </Button>
+                          <Popper
+                            open={exitPopper}
+                            anchorEl={anchorEl}
+                            placement="bottom"
+                            transition
+                            className={classes.logoutPopper}
+                          >
+                            {({ TransitionProps }) => (
+                              <ClickAwayListener
+                                onClickAway={() => setExitPopper(false)}
+                              >
+                                <Fade {...TransitionProps} timeout={350}>
+                                  <ul className={classes.exitMenu}>
+                                    <li
+                                      onClick={openExitAccountDialog}
+                                      className={classes.exitMenuItem}
+                                      id="logoutFromCurrentAccount"
                                     >
-                                      Выйти из всех аккаунтов
-                                    </Button>
-                                  </li>
-                                </ul>
-                              </Fade>
-                            </ClickAwayListener>
-                          )}
-                        </Popper>
-                        <IconButton
-                          edge="start"
-                          className={classes.menuButton}
-                          color="inherit"
-                          onClick={() => setOpenDrawer((prev) => !prev)}
-                        >
-                          {!openDrawer && <MenuIcon />}
-                          {openDrawer && <CloseIcon />}
-                        </IconButton>
-                      </div>
+                                      <Typography>
+                                        Выйти из текущего аккаунта
+                                      </Typography>
+                                      <Typography>
+                                        {user?.msisdn
+                                          ? formatPhone1(user?.msisdn || "")
+                                          : ""}
+                                      </Typography>
+                                    </li>
+                                    <li
+                                      className={classes.exitMenuItem}
+                                      id="logoutFromAllAccount"
+                                    >
+                                      <Button
+                                        onClick={openExitDialog}
+                                        className={classes.textBtn}
+                                      >
+                                        Выйти из всех аккаунтов
+                                      </Button>
+                                    </li>
+                                  </ul>
+                                </Fade>
+                              </ClickAwayListener>
+                            )}
+                          </Popper>
+                          <IconButton
+                            edge="start"
+                            className={classes.menuButton}
+                            color="inherit"
+                            onClick={() => setOpenDrawer((prev) => !prev)}
+                          >
+                            {!openDrawer && <MenuIcon />}
+                            {openDrawer && <CloseIcon />}
+                          </IconButton>
+                        </div>
+                      </Grid>
                     </Grid>
-                  </Grid>
-                </Toolbar>
+                  </Toolbar>
+                </Grid>
               </Grid>
-            </Grid>
-          </AppBar>
+            </AppBar>
+          </div>
         </div>
       </div>
     </>

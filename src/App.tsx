@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Redirect, Switch, Route } from "react-router-dom";
+import { Redirect, Switch, Route, useHistory } from "react-router-dom";
 
 import { useAppSelector } from "store";
 import { useCheckAuth } from "hooks/useCheckAuth";
@@ -10,26 +10,35 @@ import { routes } from "constants/routes";
 import Main from "pages/main";
 import Header from "components/base/header";
 import PageProgress from "components/ui/PageProgress";
+import Auth from "./pages/auth/index";
 
 const App: React.FC = () => {
   const { loading: userLoading, user } = useAppSelector((state) => state.user);
-  const userError = useAppSelector((state) => state.user.error);
+  const userError = useAppSelector((state) => state.user.error);  
 
-  // axios.defaults.headers.common["Platform"] = "web";
-  // useCheckAuth();
-  // useGlobalErrorCatcher();
+  axios.defaults.headers.common["Platform"] = "web";
+  useCheckAuth();
+  useGlobalErrorCatcher();
 
-  // if (userError || userLoading || !user) return <PageProgress />;
+  const isAuth = !(userError || userLoading || !user);
 
   return (
     <>
       <Header />
       <div id="appWrapper">
         <Switch>
-          <Route path="/">
-            <Main />
-          </Route>
-          <Redirect to={routes.personal.base} />
+          {isAuth ? (
+            <>
+              <Route path="/">
+                <Main />
+              </Route>
+              <Redirect to={routes.personal.base} />
+            </>
+          ) : (
+            <Route path="/auth">
+              <Auth />
+            </Route>
+          )}
         </Switch>
       </div>
     </>

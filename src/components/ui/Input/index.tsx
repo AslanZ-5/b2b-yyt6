@@ -72,7 +72,7 @@ const CustomInput: FC<IProps> = ({
     >
       <OutlinedInput
         value={value}
-        onChange={(event) => setValue(event)}
+        onChange={setValue}
         className={classes.input}
         name={name}
         type={type}
@@ -90,7 +90,7 @@ const CustomInput: FC<IProps> = ({
         rows={rows}
         inputComponent={mask ? (TextMaskCustom as any) : undefined}
         inputProps={{
-          mask: mask,
+          mask,
           autocomplete: 'new-password'
         }}
         readOnly={readOnly}

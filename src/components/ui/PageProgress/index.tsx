@@ -1,12 +1,16 @@
 import { CircularProgress } from "@material-ui/core";
+import { CSSProperties } from "@material-ui/core/styles/withStyles";
+import { FC } from "react";
 import { useStyles } from "./style";
 
-const PageProgress = () => {
+const PageProgress:FC<{style?:string}> = ({style}) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
+      <div className={style}>
       <CircularProgress className={classes.spinner} />
+      </div>
     </div>
   );
 };

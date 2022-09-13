@@ -11,11 +11,12 @@ const defaultErrorsMessages = {
 export interface IFieldRule {
   required?: boolean;
   pattern?: RegExp;
+  processedPatternMask?: (value:string)=>string;
 }
 
 export interface IErrorMessage {
   required?: string;
-  pattern?: string;
+  pattern?: string;  
 }
 
 interface IHookProps {
@@ -25,7 +26,7 @@ interface IHookProps {
 }
 
 export const useForm = ({
-  initialValues,
+  initialValues,  
   rules,
   errorsMessages = {},
 }: IHookProps) => {
@@ -55,7 +56,12 @@ export const useForm = ({
 
       //проверка на регулярку
       if (rules[fieldKey]?.pattern && fieldValues[fieldKey]) {
-        if (rules[fieldKey]?.pattern?.test(fieldValues[fieldKey]))
+        let value = fieldValues[fieldKey]
+        const processedPatternMask = rules[fieldKey]?.processedPatternMask
+        if(typeof processedPatternMask === "function"){
+         value = processedPatternMask(value)
+        }       
+        if (rules[fieldKey]?.pattern?.test(value))
           delete currentErrors[fieldKey];
         else
           currentErrors[fieldKey] =
@@ -102,6 +108,7 @@ export const useForm = ({
     values,
     handleInputValue,
     errors,
+    setValues,
     formIsValid,
     clearFields,
     clearField

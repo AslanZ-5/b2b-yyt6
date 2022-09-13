@@ -102,7 +102,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
       width: 16,
       height: 16,
       filter:
-        "invert(56%) sepia(25%) saturate(1726%) hue-rotate(335deg) brightness(150%) contrast(91%)",
+        "invert(92%) sepia(3%) saturate(7113%) hue-rotate(91deg) brightness(96%) contrast(81%)",
       marginRight: 20,
     },
     textTransform: "none",

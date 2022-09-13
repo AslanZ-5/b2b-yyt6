@@ -12,7 +12,6 @@ import NumberCard from "./components/cards/number";
 import TariffCard from "./components/cards/tariff";
 import ServicesCard from "./components/cards/services";
 import FastOperations from "./components/fast-operations";
-import NumbersSearch from "./components/numbers-search";
 import BestOffers from "./components/best-offers";
 import BalancesDialog from "./components/balances-dialog/index";
 
