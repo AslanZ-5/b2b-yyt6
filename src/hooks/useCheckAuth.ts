@@ -37,10 +37,10 @@ const getUserData = (
   queryParams: string
 ): { token: string; refresh_token: string } => {
   const { token, refresh_token } = getUserDataFromQueryParams(queryParams);
-  if (token) return { token, refresh_token: refresh_token || "" };
+  if (token) return { token, refresh_token: refresh_token! };
   else {
     const { token, refresh_token } = getUserDataFromLocalstorage();
-    return { token: token || "", refresh_token: refresh_token || "" };
+    return { token: token!, refresh_token: refresh_token! };
   }
 };
 
