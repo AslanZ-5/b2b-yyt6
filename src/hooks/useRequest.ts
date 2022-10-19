@@ -73,8 +73,8 @@ export const useCRUDRequest = <T>({ api }: ICRUDRequest<T>) => {
         setLoading(false);
       } catch (error) {
         if (instanceOfIError(error)) {
-          if (+error?.response?.data?.status?.status_code >= 40)
-            setErrors({ message: error?.response?.data?.status?.message });
+          if (error?.response?.data?.status?.status_code)
+            setErrors({ message: error?.response?.data?.status?.description });
           else setErrors({ message: "Что-то пошло не так..." });
           setLoading(false);
         } else setErrors({ message: "Что-то пошло не так..." });
