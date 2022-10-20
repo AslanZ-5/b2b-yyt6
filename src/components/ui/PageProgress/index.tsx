@@ -1,5 +1,4 @@
 import { CircularProgress } from "@material-ui/core";
-import { CSSProperties } from "@material-ui/core/styles/withStyles";
 import { FC } from "react";
 import { useStyles } from "./style";
 

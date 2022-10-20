@@ -1,76 +1,60 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-
-import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import Button from "@material-ui/core/Button";
-import Popper from "@material-ui/core/Popper";
-import IconButton from "@material-ui/core/IconButton";
-import Fade from "@material-ui/core/Fade";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import MenuIcon from "@material-ui/icons/Menu";
-import CloseIcon from "@material-ui/icons/Close";
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-
-import InfoDialog from "components/ui/InfoDialog";
-import NavTabs from "components/base/nav-tabs";
-
-import { useAppSelector, useAppDispatch } from "store";
-import { setLoading, fetchUser } from "store/slices/user";
-import { useLogout } from "hooks/useLogout";
-import { useForm } from "hooks/useForm";
-import { formatPhone1 } from "helpers/formatPhone";
-
-import AddAccountDialog from "./dialogs/add-account";
-import MobileDrawer from "./MobileDrawer";
-import { useStyles } from "./style";
-import OtpDialog from "./dialogs/otp";
+import React, { useState, useCallback, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import {
+  Typography,
+  Grid,
+  AppBar,
+  Toolbar,
+  Select,
+  MenuItem,
+  Button,
+  Popper,
+  IconButton,
+  Fade,
+  ClickAwayListener,
+} from '@material-ui/core';
+import InfoDialog from 'components/ui/InfoDialog';
+import NavTabs from 'components/base/nav-tabs';
+import { useAppSelector, useAppDispatch } from 'store';
+import { setLoading, fetchUser } from 'store/slices/user';
+import { useLogout } from 'hooks/useLogout';
+import { useForm } from 'hooks/useForm';
+import { formatPhone1 } from 'helpers/formatPhone';
+import AddAccountDialog from './dialogs/add-account/index';
+import MobileDrawer from './MobileDrawer';
+import { useStyles } from './style';
 
 const Header: React.FC = () => {
   const classes = useStyles();
   const { logoutFromAll, logoutFromCurrent } = useLogout();
   const history = useHistory();
-  const { user, accounts } = useAppSelector((state) => state.user);
+  const { user, accounts } = useAppSelector(state => state.user);
   const dispatch = useAppDispatch();
-  const [number, setNumber] = useState<string>("");
+  const [number, setNumber] = useState<string>('');
   const [showExitDialog, setShowExitDialog] = useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
   const [showExitAccountDialog, setShowExitAccountDialog] = useState(false);
   const [exitPopper, setExitPopper] = useState(false);
   const [showAddAccountDialog, setShowAddAccountDialog] = useState(false);
-  const [showOtpDialog, setShowOtpDialog] = useState(false);
-  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
-    null
-  );
-  const {
-    values,
-    handleInputValue,
-    errors,
-    formIsValid,
-    clearFields,
-    clearField,
-  } = useForm({
-    initialValues: { login: "", password: "" },
+  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
+  const { values, handleInputValue, errors, formIsValid, clearFields, clearField } = useForm({
+    initialValues: { login: '', password: '' },
     rules: {
       login: {
         required: true,
         pattern: /^([0-9]{3})\s([0-9]{3})\s([0-9]{2})\s([0-9]{2})+$/,
       },
-      password: { required: true, pattern: /^[a-zA-Z0-9@*#]{8,15}$/ },
+      password: { required: true, pattern: /^[a-zA-Z0-9@*#_]{8,15}$/ },
     },
   });
 
-  const drawerHandler = (open: boolean) => (
-    event: React.KeyboardEvent | React.MouseEvent
-  ) => {
+  const drawerHandler = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
     if (
-      event.type === "keydown" &&
-      ((event as React.KeyboardEvent).key === "Tab" ||
-        (event as React.KeyboardEvent).key === "Shift")
+      event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')
     ) {
       return;
     }
@@ -79,14 +63,12 @@ const Header: React.FC = () => {
 
   const openExitPopper = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
-    setExitPopper((prev) => !prev);
+    setExitPopper(prev => !prev);
   };
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     if (event.target.value) {
-      const newUser = accounts.find(
-        (user) => user.msisdn === event.target.value
-      );
+      const newUser = accounts.find(user => user.msisdn === event.target.value);
       if (newUser) {
         dispatch(setLoading(true));
         dispatch(fetchUser(newUser?.token, newUser?.refresh_token));
@@ -98,10 +80,7 @@ const Header: React.FC = () => {
 
   const closeDrawer = useCallback(() => setOpenDrawer(false), []);
   const closeExitDialog = useCallback(() => setShowExitDialog(false), []);
-  const closeExitAccountDialog = useCallback(
-    () => setShowExitAccountDialog(false),
-    []
-  );
+  const closeExitAccountDialog = useCallback(() => setShowExitAccountDialog(false), []);
   const openExitDialog = useCallback(() => {
     setExitPopper(false);
     setShowExitDialog(true);
@@ -126,13 +105,13 @@ const Header: React.FC = () => {
     <>
       <div hidden={!user}>
         <InfoDialog
-          type="error"
+          type='error'
           show={showExitDialog}
-          title="Вы действительно хотите выйти из всех аккаунтов?"
+          title='Вы действительно хотите выйти из всех аккаунтов?'
           handleClose={closeExitDialog}
           upButton={{
-            text: "Да",
-            callback:() => {
+            text: 'Да',
+            callback: () => {
               logoutFromAll();
               closeExitDialog();
             },
@@ -142,13 +121,13 @@ const Header: React.FC = () => {
           }}
         />
         <InfoDialog
-          type="error"
-          title="Вы уверены, что хотите выйти из аккаунта?"
+          type='error'
+          title='Вы уверены, что хотите выйти из аккаунта?'
           description={`+7${user?.msisdn}`}
           show={showExitAccountDialog}
           handleClose={closeExitAccountDialog}
           upButton={{
-            text: "Да",
+            text: 'Да',
             callback: () => {
               logoutFromCurrent();
               closeExitAccountDialog();
@@ -161,7 +140,6 @@ const Header: React.FC = () => {
         <AddAccountDialog
           open={showAddAccountDialog}
           setOpen={setShowAddAccountDialog}
-          showOtpDialog={setShowOtpDialog}
           formValues={{
             values,
             handleInputValue,
@@ -170,58 +148,39 @@ const Header: React.FC = () => {
             clearField,
           }}
         />
-        <OtpDialog
-          open={showOtpDialog}
-          setOpen={setShowOtpDialog}
-          showAddAccountDialog={setShowAddAccountDialog}
-          login={values.login}
-        />
         <MobileDrawer open={openDrawer} setOpen={drawerHandler}>
-          <NavTabs
-            handleOpenExitDialog={openExitDialog}
-            closeDrawer={closeDrawer}
-          />
+          <NavTabs handleOpenExitDialog={openExitDialog} closeDrawer={closeDrawer} />
         </MobileDrawer>
-        <div className={classes.headerContainer} id="appHeaderContainer">
-          <div className={classes.root} id="appHeader">
-            <AppBar elevation={0} position="static">
-              <Grid container justify="center">
+        <div className={classes.headerContainer} id='appHeaderContainer'>
+          <div className={classes.root} id='appHeader'>
+            <AppBar elevation={0} position='static'>
+              <Grid container justify='center'>
                 <Grid container item xs={11} lg={9}>
                   <Toolbar className={classes.toolbar}>
-                    <Grid container alignItems="center">
+                    <Grid container alignItems='center'>
                       <Grid item xs={6} sm={2}>
                         <img
-                          style={{ cursor: "pointer" }}
-                          onClick={() => history.push("/")}
-                          src="/images/logo.svg"
-                          alt="logo"
-                          id="appLogo"
+                          style={{ cursor: 'pointer' }}
+                          onClick={() => history.push('/')}
+                          src='/images/logo.svg'
+                          alt='logo'
+                          id='appLogo'
                         />
                       </Grid>
-                      <Grid
-                        container
-                        justify="space-between"
-                        alignItems="center"
-                        item
-                        xs={6}
-                        sm={10}
-                      >
-                        <div className={classes.companyName} id="companyName">
-                          {user?.orgName || ""}
+                      <Grid container justify='space-between' alignItems='center' item xs={6} sm={10}>
+                        <div className={classes.companyName} id='companyName'>
+                          {user?.orgName || ''}
                         </div>
-                        <div
-                          style={{ display: "flex", alignItems: "center" }}
-                          id="accountsSelect"
-                        >
+                        <div style={{ display: 'flex', alignItems: 'center' }} id='accountsSelect'>
                           <Select
                             MenuProps={{
                               anchorOrigin: {
-                                vertical: "bottom",
-                                horizontal: "center",
+                                vertical: 'bottom',
+                                horizontal: 'center',
                               },
                               transformOrigin: {
-                                vertical: "top",
-                                horizontal: "center",
+                                vertical: 'top',
+                                horizontal: 'center',
                               },
                               getContentAnchorEl: null,
                             }}
@@ -231,16 +190,10 @@ const Header: React.FC = () => {
                             value={number}
                             onChange={handleChange}
                           >
-                            {accounts?.map((user) => (
-                              <MenuItem
-                                key={user.msisdn}
-                                className={classes.selectItem}
-                                value={user.msisdn}
-                              >
+                            {accounts?.map(user => (
+                              <MenuItem key={user.msisdn} className={classes.selectItem} value={user.msisdn}>
                                 +7{user.msisdn}
-                                <Typography className={classes.selectSubTitle}>
-                                  {user.full_name}
-                                </Typography>
+                                <Typography className={classes.selectSubTitle}>{user.full_name}</Typography>
                               </MenuItem>
                             ))}
 
@@ -256,46 +209,32 @@ const Header: React.FC = () => {
                           <Button
                             onClick={openExitPopper}
                             className={classes.exitBtn}
-                            variant="contained"
-                            id="logoutButton"
+                            variant='contained'
+                            id='logoutButton'
                           >
-                            <img src="/images/icons/logout.svg" alt="logout" />
+                            <img src='/images/icons/logout.svg' alt='logout' />
                           </Button>
                           <Popper
                             open={exitPopper}
                             anchorEl={anchorEl}
-                            placement="bottom"
+                            placement='bottom'
                             transition
                             className={classes.logoutPopper}
                           >
                             {({ TransitionProps }) => (
-                              <ClickAwayListener
-                                onClickAway={() => setExitPopper(false)}
-                              >
+                              <ClickAwayListener onClickAway={() => setExitPopper(false)}>
                                 <Fade {...TransitionProps} timeout={350}>
                                   <ul className={classes.exitMenu}>
                                     <li
                                       onClick={openExitAccountDialog}
                                       className={classes.exitMenuItem}
-                                      id="logoutFromCurrentAccount"
+                                      id='logoutFromCurrentAccount'
                                     >
-                                      <Typography>
-                                        Выйти из текущего аккаунта
-                                      </Typography>
-                                      <Typography>
-                                        {user?.msisdn
-                                          ? formatPhone1(user?.msisdn || "")
-                                          : ""}
-                                      </Typography>
+                                      <Typography>Выйти из текущего аккаунта</Typography>
+                                      <Typography>{user?.msisdn ? formatPhone1(user?.msisdn || '') : ''}</Typography>
                                     </li>
-                                    <li
-                                      className={classes.exitMenuItem}
-                                      id="logoutFromAllAccount"
-                                    >
-                                      <Button
-                                        onClick={openExitDialog}
-                                        className={classes.textBtn}
-                                      >
+                                    <li className={classes.exitMenuItem} id='logoutFromAllAccount'>
+                                      <Button onClick={openExitDialog} className={classes.textBtn}>
                                         Выйти из всех аккаунтов
                                       </Button>
                                     </li>
@@ -305,10 +244,10 @@ const Header: React.FC = () => {
                             )}
                           </Popper>
                           <IconButton
-                            edge="start"
+                            edge='start'
                             className={classes.menuButton}
-                            color="inherit"
-                            onClick={() => setOpenDrawer((prev) => !prev)}
+                            color='inherit'
+                            onClick={() => setOpenDrawer(prev => !prev)}
                           >
                             {!openDrawer && <MenuIcon />}
                             {openDrawer && <CloseIcon />}

@@ -1,11 +1,8 @@
-import { useEffect } from "react";
-import { useHistory, useLocation } from "react-router-dom";
-
-import { useAppDispatch } from "store";
-import { fetchUser } from "store/slices/user";
-import { INDIVIDUAL_HOST } from "constants/api";
-import { routes } from "constants/routes";
-import Auth from "pages/auth";
+import { useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import { useAppDispatch } from 'store';
+import { fetchUser } from 'store/slices/user';
+import { routes } from 'constants/routes';
 
 /**
  * Хук авторизации
@@ -15,7 +12,7 @@ import Auth from "pages/auth";
 export const useCheckAuth = () => {
   const queryParams = useLocation().search;
   const dispatch = useAppDispatch();
-  const history = useHistory()
+  const history = useHistory();
 
   useEffect(() => {
     const { token, refresh_token } = getUserData(queryParams);
@@ -23,8 +20,8 @@ export const useCheckAuth = () => {
       dispatch(fetchUser(token, refresh_token));
     } else {
       history.push(`${routes.personal.auth}`);
-      
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, queryParams]);
 };
 
@@ -33,9 +30,7 @@ export const useCheckAuth = () => {
  * @param queryParams
  * @returns { token: string; refresh_token: string}
  **/
-const getUserData = (
-  queryParams: string
-): { token: string; refresh_token: string } => {
+const getUserData = (queryParams: string): { token: string; refresh_token: string } => {
   const { token, refresh_token } = getUserDataFromQueryParams(queryParams);
   if (token) return { token, refresh_token: refresh_token! };
   else {
@@ -50,8 +45,8 @@ const getUserData = (
  * @returns { token: string; refresh_token: string}
  **/
 const getUserDataFromQueryParams = (queryParams: string) => {
-  const token = new URLSearchParams(queryParams).get("token");
-  const refresh_token = new URLSearchParams(queryParams).get("refresh_token");
+  const token = new URLSearchParams(queryParams).get('token');
+  const refresh_token = new URLSearchParams(queryParams).get('refresh_token');
   return { token, refresh_token };
 };
 
@@ -60,7 +55,7 @@ const getUserDataFromQueryParams = (queryParams: string) => {
  * @returns { token: string; refresh_token: string}
  **/
 const getUserDataFromLocalstorage = () => {
-  const token = localStorage.getItem("token");
-  const refresh_token = localStorage.getItem("refresh_token");
+  const token = localStorage.getItem('token');
+  const refresh_token = localStorage.getItem('refresh_token');
   return { token, refresh_token };
 };

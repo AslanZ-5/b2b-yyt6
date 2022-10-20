@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Redirect, Switch, Route, useHistory } from "react-router-dom";
+import { Redirect, Switch, Route } from "react-router-dom";
 
 import { useAppSelector } from "store";
 import { useCheckAuth } from "hooks/useCheckAuth";
@@ -9,7 +9,6 @@ import { routes } from "constants/routes";
 
 import Main from "pages/main";
 import Header from "components/base/header";
-import PageProgress from "components/ui/PageProgress";
 import Auth from "./pages/auth/index";
 
 const App: React.FC = () => {
