@@ -1,7 +1,6 @@
 import { makeStyles, Theme } from "@material-ui/core";
 import { baseColors } from "constants/colors";
 
-
 export const useStyles = makeStyles((theme: Theme) => ({
   timerContainer: {
     display: "flex",

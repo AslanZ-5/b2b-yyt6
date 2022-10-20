@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { FC } from "react";
 import Button from "@material-ui/core/Button";
 
 import { useStyles, StylesProps } from "./style";

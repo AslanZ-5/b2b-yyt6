@@ -34,7 +34,7 @@ interface IProps {
   login: string;
 }
 
-const OtpForm: FC<IProps> = ({ open, setOpen, showLoginAccount, sendSms, login }) => {
+const AddOtpForm: FC<IProps> = ({ open, setOpen, showLoginAccount, sendSms, login }) => {
   const classes = useStyles();
   const dispatch = useAppDispatch();
   const history = useHistory();
@@ -102,7 +102,7 @@ const OtpForm: FC<IProps> = ({ open, setOpen, showLoginAccount, sendSms, login }
       ) : (
         <Grid container justify='center'>
           <Grid container style={{ width: 'min-content', margin: '0 auto' }}>
-            <div className={classes.title}>Вход в личный кабинет</div>
+            <div className={classes.title}>Добавить аккаунт</div>
             <Typography style={{ display: 'flex', alignSelf: 'start' }} className={classes.inputDescription}>
               Введите код из SMS
             </Typography>
@@ -149,4 +149,4 @@ const OtpForm: FC<IProps> = ({ open, setOpen, showLoginAccount, sendSms, login }
   );
 };
 
-export default OtpForm;
+export default AddOtpForm;
