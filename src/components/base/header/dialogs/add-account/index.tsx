@@ -36,7 +36,7 @@ export const processedPhoneNumber = (value: string) => {
   //Удаление маски перед валидацией номера телефона
   return value.replace(/[^\d]/g, '');
 };
-const AddAccountDialog: FC<IProps> = ({ open, setOpen, formValues }) => {
+const AddAccountDialog: FC<IProps> = ({ open, setOpen }) => {
   const history = useHistory();
   const classes = useStyles();
   const dispatch = useAppDispatch();
@@ -88,8 +88,8 @@ const AddAccountDialog: FC<IProps> = ({ open, setOpen, formValues }) => {
     clearFields();
     if (loginAccountResponse) {
       history.push(routes.personal.base);
+      setOpen(false);
     }
-    setOpen(false);
   };
 
   const disableButton = () => {
@@ -100,7 +100,9 @@ const AddAccountDialog: FC<IProps> = ({ open, setOpen, formValues }) => {
     if (!loginAccountErrors?.message && loginAccountResponse) {
       dispatch(setLoading(true));
       dispatch(fetchUser(loginAccountResponse?.token || '', loginAccountResponse?.refreshToken || ''));
+      setOpen(false);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loginAccountResponse, loginAccountErrors?.message, dispatch]);
 
   useEffect(() => {
