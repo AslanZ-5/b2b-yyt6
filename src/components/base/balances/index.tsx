@@ -7,6 +7,7 @@ import PageProgress from "components/ui/PageProgress";
 
 import Card from "./card/index";
 import { useStyles } from "./styles";
+import { Typography } from "@material-ui/core";
 
 const Balances: FC = () => {
   const classes = useStyles();
@@ -36,7 +37,7 @@ const Balances: FC = () => {
             ))}
           </Grid>
         </div>
-      ) : null}
+      ) : <Typography variant="body2">Нет остатков по пакетам услуг</Typography>}
       {messagesBalances?.length ? (
         <div>
           <div className={classes.subTitle}>SMS</div>

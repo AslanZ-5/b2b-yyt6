@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from 'react';
 
 /**
  * Хук для выполнения fetch запроса (GET)
@@ -72,15 +72,15 @@ export const useCRUDRequest = <T>({ api }: ICRUDRequest<T>) => {
         setErrors(null);
         setLoading(false);
       } catch (error) {
-        if (instanceOfIError(error)) {
-          if (error?.response?.data?.status?.status_code)
-            setErrors({ message: error?.response?.data?.status?.description });
-          else setErrors({ message: "Что-то пошло не так..." });
-          setLoading(false);
-        } else setErrors({ message: "Что-то пошло не так..." });
+        if (instanceOfIError(error) && error?.response?.data?.status?.status_code) {
+          const status = error?.response?.data?.status;
+          const message = status?.description || status?.message;
+          setErrors({ message });
+        } else setErrors({ message: 'Что-то пошло не так...' });
+        setLoading(false);
       }
     },
-    [api]
+    [api],
   );
 
   const clear = useCallback(() => {
