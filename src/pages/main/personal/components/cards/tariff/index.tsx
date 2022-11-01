@@ -25,6 +25,7 @@ const TariffCard: FC<IProps> = ({ setOpenTariffDialog }) => {
   const dispatch = useAppDispatch();
   const { current } = useAppSelector((state) => state.tariffs);
   const { user } = useAppSelector((state) => state.user);
+  const tariffLogo = current?.data?.preview ? `${MAIN_HOST}/${current.data?.preview}` : 'images/cards/balanceCardDefault.svg'
 
   useEffect(() => {
     dispatch(fetchCurrentTariff());
@@ -47,9 +48,9 @@ const TariffCard: FC<IProps> = ({ setOpenTariffDialog }) => {
       {current.data && !current.loading ? (
         <Grid container alignItems="center" justify="space-between">
           <Grid container alignItems="center" item md={10} xs={9}>
-            <img src={`${MAIN_HOST}/${current.data?.preview}`} alt="" />
+            <img src={tariffLogo} alt="" />
             <Typography className={classes.subTitle} component="h6">
-              {current.data?.name}
+              {current.data?.name || 'Тариф не подключен'}
             </Typography>
           </Grid>
           <Grid

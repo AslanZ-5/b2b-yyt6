@@ -165,10 +165,14 @@ const LoginAccount: FC = () => {
               <Box width='100%' mt='30px' mb='12px' textAlign='center'>
                 {loginAccountErrors?.message ? (
                   <div className={classes.requestErrors}>{loginAccountErrors?.message}</div>
-                ) : null}
+                ) : (
+                  ''
+                )}
                 {otpErrors?.message && !otpResponse ? (
                   <div className={classes.requestErrors}>Номер не является клиентом +7 Телеком</div>
-                ) : null}
+                ) : (
+                  ''
+                )}
                 <Button
                   style={additionalClassNameButton}
                   text='Войти'
