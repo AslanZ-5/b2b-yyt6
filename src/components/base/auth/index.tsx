@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { BaseSyntheticEvent, ChangeEvent, FC, useEffect, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
@@ -85,6 +85,12 @@ const LoginAccount: FC = () => {
     }
   };
 
+  const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+    handleInputValue(e);
+    clearLoginResponse();
+    clearOtpResponse();
+  };
+
   const disableButton = () => {
     return Boolean(!formIsValid() || !values.login || !values.password);
   };
@@ -131,7 +137,7 @@ const LoginAccount: FC = () => {
                 <Input
                   name='login'
                   value={values.login}
-                  setValue={handleInputValue}
+                  setValue={handleInputChange}
                   {...(errors?.login ? { error: true, helperText: errors.login } : { error: false, helperText: '' })}
                   mask={phoneMask}
                   startAdornment={<div className={classes.inputStartAddornment}>+7</div>}
@@ -145,7 +151,7 @@ const LoginAccount: FC = () => {
               <Input
                 name='password'
                 value={values.password}
-                setValue={handleInputValue}
+                setValue={handleInputChange}
                 type={showPassword ? 'text' : 'password'}
                 {...(errors?.password
                   ? { error: true, helperText: errors.password }
