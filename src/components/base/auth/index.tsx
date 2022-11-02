@@ -169,7 +169,9 @@ const LoginAccount: FC = () => {
                   ''
                 )}
                 {otpErrors?.message && !otpResponse ? (
-                  <div className={classes.requestErrors}>Номер не является клиентом +7 Телеком</div>
+                  <div className={classes.requestErrors}>
+                    {otpErrors?.message || 'Номер не является клиентом +7 Телеком'}
+                  </div>
                 ) : (
                   ''
                 )}
