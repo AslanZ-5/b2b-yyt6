@@ -2,22 +2,20 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-
 import Sidebar from "components/base/sidebar";
 import NavTabs from "components/base/nav-tabs";
 import PageProgress from "components/ui/PageProgress";
 import InfoDialog from "components/ui/InfoDialog";
 import Personal from "pages/main/personal";
 import Input from "components/ui/Input";
-
 import { useCRUDRequest } from "hooks/useRequest";
 import { routes } from "constants/routes";
 import { useAppSelector } from "store";
 import { setPassword as setPasswordRequest } from "api/settings";
 import useForm from "hooks/useForm";
-
 import { useStyles } from "./style";
 
+const Expenses = lazy(() => import("./expenses"));
 const Services = lazy(() => import("./services"));
 const Numbers = lazy(() => import("./numbers"));
 const Tariffs = lazy(() => import("./tariffs"));
@@ -88,10 +86,16 @@ const Main: React.FC = () => {
 
   const disableButton = !Boolean(
     values.acceptPassword &&
-    values.newPassword &&
-    formIsValid() &&
-    passwordsConfirm
+      values.newPassword &&
+      formIsValid() &&
+      passwordsConfirm
   );
+
+  const newPasswordSvg =
+    "/images/icons/eye-" + (showPassword ? "show" : "hide") + ".svg";
+
+  const acceptPasswordSvg =
+    "/images/icons/eye-" + (showAcceptPassword ? "show" : "hide") + ".svg";
 
   return (
     <>
@@ -128,8 +132,7 @@ const Main: React.FC = () => {
               <div className={classes.passwordInputImg}>
                 <img
                   onClick={() => setShowPassword(!showPassword)}
-                  src={`/images/icons/eye-${showPassword ? "show" : "hide"
-                    }.svg`}
+                  src={newPasswordSvg}
                   alt=""
                 />
               </div>
@@ -150,8 +153,7 @@ const Main: React.FC = () => {
               <div className={classes.passwordInputImg}>
                 <img
                   onClick={() => setShowAcceptPassword(!showAcceptPassword)}
-                  src={`/images/icons/eye-${showAcceptPassword ? "show" : "hide"
-                    }.svg`}
+                  src={acceptPasswordSvg}
                   alt=""
                 />
               </div>
@@ -175,8 +177,8 @@ const Main: React.FC = () => {
         upButton={{
           text: "Перейти в настройки",
           callback: () => {
-            setShowEmailDialog(false)
-            history.push(routes.settings.base)
+            setShowEmailDialog(false);
+            history.push(routes.settings.base);
           },
         }}
         downButton={{
@@ -211,29 +213,27 @@ const Main: React.FC = () => {
                   <AdminChangeService />
                 </Route>
                 {/** services **/}
+                <Route path={routes.expenses.base}>
+                  <Expenses />
+                </Route>
                 <Route path={routes.numbers.base}>
                   <Numbers />
                 </Route>
                 <Route path={routes.services.base}>
                   <Services />
                 </Route>
-                {/** tariffs **/}
                 <Route path={routes.tariffs.base}>
                   <Tariffs />
                 </Route>
-                {/** support **/}
                 <Route path={routes.support.base}>
                   <Support />
                 </Route>
-                {/** settings **/}
                 <Route path={routes.settings.base}>
                   <Settings />
                 </Route>
-                {/** balances **/}
                 <Route path={routes.balances.base}>
                   <Balances />
                 </Route>
-                {/** default **/}
                 <Redirect to={routes.personal.base} />
               </Switch>
             </Suspense>

@@ -1,33 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Button from "@material-ui/core/Button";
-
+import { Tabs, Tab, Button } from "@material-ui/core";
+import { useAppSelector } from "store";
 import { getTabsList } from "./tabs";
 import { useStyles } from "./style";
-import { useAppSelector } from "store";
 
-interface IProps {
+interface NavTabsProps {
   handleOpenExitDialog?: any;
   closeDrawer?: any;
 }
 
-const NavTabs: React.FC<IProps> = ({ handleOpenExitDialog, closeDrawer }) => {
+const NavTabs: FC<NavTabsProps> = ({ handleOpenExitDialog, closeDrawer }) => {
   const location = useLocation();
   const classes = useStyles();
   const history = useHistory();
   const { user } = useAppSelector((state) => state.user);
+
   const currentTab = getTabsList(user?.isAdmin || false).findIndex(
     (el) => el.path === `/${location.pathname.split("/")[1]}`
   );
+
   const [showServicesSubtabs, setShowServicesSubtabs] = useState(false);
   const [tab, setTabs] = useState(0);
-
-  useEffect(() => {
-    setTabs(currentTab === -1 ? 0 : currentTab);
-  }, [currentTab]);
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setTabs(newValue);
@@ -42,6 +36,10 @@ const NavTabs: React.FC<IProps> = ({ handleOpenExitDialog, closeDrawer }) => {
       closeDrawer();
     }
   };
+
+  useEffect(() => {
+    setTabs(currentTab === -1 ? 0 : currentTab);
+  }, [currentTab]);
 
   return (
     <>

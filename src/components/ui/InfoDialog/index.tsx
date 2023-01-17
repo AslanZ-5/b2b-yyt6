@@ -1,18 +1,19 @@
 import React, { memo } from "react";
-import Button from "@material-ui/core/Button";
-import Box from "@material-ui/core/Box";
-import Dialog from "@material-ui/core/Dialog";
-import Typography from "@material-ui/core/Typography";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import Slide from "@material-ui/core/Slide";
-import Grid from "@material-ui/core/Grid";
-import IconButton from "@material-ui/core/IconButton";
+import {
+  Button,
+  Box,
+  Dialog,
+  Typography,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  Slide,
+  Grid,
+  IconButton,
+} from "@material-ui/core";
 import { TransitionProps } from "@material-ui/core/transitions";
 import CloseIcon from "@material-ui/icons/Close";
 import PageProgress from "components/ui/PageProgress";
-
 import { useStyles } from "./style";
 
 const Transition = React.forwardRef(function Transition(
@@ -43,6 +44,8 @@ interface IProps {
     | "createPassword"
     | "notEnoughMoney"
     | "changeSimSuccess"
+    | "detalizationSuccess"
+    | "inputMail"
     | "changeSimError"
     | "requestSuccess"
     | "mailing";
@@ -79,6 +82,14 @@ const InfoDialog: React.FC<IProps> = ({
   const upButtonParams = { ...upButtonDefaultValue, ...upButton };
   const downButtonParams = { ...downButtonDefaultValue, ...downButton };
 
+  let imgSrc = "/images/dialogs/" + type + ".svg";
+
+  if (
+    (["detalizationSuccess", "inputMail"] as IProps["type"][]).includes(type)
+  ) {
+    imgSrc = "/images/dialogs/" + type + ".png";
+  }
+
   return (
     <Dialog
       classes={{ root: classes.root, paper: classes.paper }}
@@ -97,7 +108,7 @@ const InfoDialog: React.FC<IProps> = ({
             </IconButton>
           </Grid>
           <DialogContent>
-            {type ? <img src={`/images/dialogs/${type}.svg`} alt="img" /> : null}
+            {type ? <img src={imgSrc} alt="img" /> : null}
             <Typography className={classes.title} component="h4">
               {title}
             </Typography>

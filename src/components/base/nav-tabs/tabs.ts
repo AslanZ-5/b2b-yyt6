@@ -8,6 +8,12 @@ export const getTabsList = (isAdmin: boolean) => [
     activeIcon: "/images/icons/home-active.svg",
   },
   {
+    label: "Расходы",
+    path: routes.expenses.base,
+    icon: "/images/icons/clock.svg",
+    activeIcon: "/images/icons/clock-active.svg",
+  },
+  {
     label: "Услуги",
     path: routes.services.base,
     icon: "/images/icons/services.svg",
