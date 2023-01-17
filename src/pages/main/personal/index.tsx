@@ -22,6 +22,7 @@ import { fetchCurrentTariff } from "store/slices/tariffs";
 import { routes } from "constants/routes";
 
 import { useStyles } from "./style";
+import ExpensesCard from "components/ui/ExpensesCard";
 
 const Personal: React.FC = () => {
   const classes = useStyles();
@@ -160,6 +161,9 @@ const Personal: React.FC = () => {
             </Grid>
           </Grid>
         </Grid>
+        <Box mt={4} width="100%">
+          <ExpensesCard isPersonal />
+        </Box>
         {user?.isAdmin ? (
           <>
             <Box mt={4} mb={2} id="personalPageFastOperationsHeader">

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+    <g>
+        <path fill="#eff3f8" d="M25 0A25 25 0 1 1 0 25 25 25 0 0 1 25 0z" transform="translate(-97 -94) translate(97 94)"/>
+        <text fill="#a6b8cd" font-family="SFCompactRounded-Light, SF Rounded" font-size="30px" font-weight="300" transform="translate(-97 -94) translate(114 130)">
+            <tspan x="0" y="0">₽</tspan>
+        </text>
+    </g>
+</svg>

@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 export const baseColors = {
   primaryGradient: "linear-gradient(93.01deg, #54A9E2 0%, #70DBA3 100%)",
 
@@ -16,8 +18,22 @@ export const baseColors = {
   lightGrey: "#F7F9FC",
 
   primaryBlack: "#1F2A31",
-  primaryWhite: "#FFFFFF",  
+  primaryWhite: "#FFFFFF",
 
   error: "#F44336",
-  fieldError:"#FF6F32",
+  fieldError: "#FF6F32",
+};
+
+export const BoldFont: CSSProperties = {
+  fontFamily: "PTSans-Bold",
+  fontWeight: "bold",
+};
+
+export const RegularFont: CSSProperties = {
+  fontFamily: "PTSans-Regular",
+};
+
+export const BoldRegularFont: CSSProperties = {
+  fontFamily: "PTSans-Regular",
+  fontWeight: "bold",
 };

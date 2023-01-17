@@ -8,6 +8,7 @@ import appReducer from "store/slices/app";
 import bestOffersReducer from "store/slices/bestOffers";
 import numbersReducer from "store/slices/numbers";
 import servicesReducer from "store/slices/services";
+import expensesReducer from "store/slices/expenses";
 
 export const store = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
     bestOffers: bestOffersReducer,
     numbers: numbersReducer,
     services: servicesReducer,
+    expenses: expensesReducer,
   },
 });
 

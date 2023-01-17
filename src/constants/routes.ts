@@ -11,6 +11,9 @@ export const routes = {
       },
     },
   },
+  expenses: {
+    base: "/expenses",
+  },
   support: {
     base: "/support",
     questions: "/support/questions",
