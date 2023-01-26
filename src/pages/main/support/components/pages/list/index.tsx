@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { routes } from "constants/routes";
-import Card from "../../ui/card";
+import Card, { SupportCardProps } from "../../ui/card";
 
-const cards = [
+const cards: SupportCardProps[] = [
   {
     title: "Вопрос/ответ",
     description: "Ответы на часто задаваемые вопросы",
@@ -29,14 +29,12 @@ const cards = [
   },
 ];
 
-const List: FC = () => {
-  return (
-    <div id="supportList">
-      {cards.map((card) => (
-        <Card key={card.title} {...card} />
-      ))}
-    </div>
-  );
-};
+const List: FC = () => (
+  <div id="supportList">
+    {cards.map((card) => (
+      <Card key={card.title} {...card} />
+    ))}
+  </div>
+);
 
 export default List;

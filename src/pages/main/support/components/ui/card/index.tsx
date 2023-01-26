@@ -1,22 +1,22 @@
 import { FC } from "react";
 import { useHistory } from "react-router";
-
-import Grid from "@material-ui/core/Grid";
+import { Grid, Card, CardActionArea, Box } from "@material-ui/core";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import Box from "@material-ui/core/Box";
-
 import { useStyles } from "./styles";
 
-interface IProps {
+export interface SupportCardProps {
   title: string;
   description: string;
   imgSrc: string;
   link: string;
 }
 
-const SupportCard: FC<IProps> = ({ title, description, imgSrc, link }) => {
+const SupportCard: FC<SupportCardProps> = ({
+  title,
+  description,
+  imgSrc,
+  link,
+}) => {
   const classes = useStyles();
   const history = useHistory();
 
