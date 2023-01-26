@@ -1,35 +1,56 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
-import { baseColors } from "constants/colors";
+import { baseColors, BoldFont, RegularFont } from "constants/colors";
 
-export const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    marginBottom: 4,
-    "& .MuiAccordion-root": {
-      boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
-      backgroundColor: baseColors.primaryWhite,
+interface CardAccordionStylesProps {
+  isCardView?: boolean;
+}
+
+export const useStyles = makeStyles<Theme, CardAccordionStylesProps>(
+  (theme: Theme) => ({
+    root: {
+      marginBottom: 4,
+      "& .MuiAccordion-root": {
+        boxShadow: "0 2px 12px 0 rgba(0, 0, 0, 0.08)",
+        backgroundColor: baseColors.primaryWhite,
+      },
+      "& .MuiAccordionSummary-root": {
+        borderRadius: 8,
+        backgroundColor: baseColors.primaryWhite,
+        padding: ({ isCardView }) => (isCardView ? "20px 24px 21px 20px" : 25),
+      },
+      "& MuiCollapse-container": {
+        backgroundColor: baseColors.primaryWhite,
+      },
+      "& .MuiAccordionDetails-root": {
+        padding: "0 25px 25px 25px",
+      },
+      "& .MuiAccordionSummary-content": {
+        margin: 0,
+      },
     },
-    "& .MuiAccordionSummary-root": {
-      borderRadius: 8,
-      backgroundColor: baseColors.primaryWhite,
-      padding: 25,
+    answer: {
+      ...RegularFont,
+      fontSize: 16,
+      whiteSpace: "pre-wrap",
     },
-    "& MuiCollapse-container": {
-      backgroundColor: baseColors.primaryWhite,
+    question: {
+      ...BoldFont,
+      fontSize: 16,
     },
-    "& .MuiAccordionDetails-root": {
-      padding: "0 25px 25px 25px",
+    card: {
+      overflow: "visible",
+      boxShadow: "none",
     },
-    "& .MuiAccordionSummary-content": {
-      margin: 0,
+    title: {
+      ...BoldFont,
+      fontSize: 16,
+      paddingLeft: 10,
     },
-  },
-  answer: {
-    fontFamily: "PTSans-Regular",
-    fontSize: 16,
-    whiteSpace: "pre-wrap"
-  },
-  question: {
-    fontFamily: "PTSans-Bold",
-    fontSize: 16,
-  },
-}));
+    description: {
+      ...RegularFont,
+      fontSize: 16,
+      color: baseColors.primaryGrey,
+      paddingLeft: 40,
+    },
+  })
+);
