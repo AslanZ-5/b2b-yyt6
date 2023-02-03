@@ -1,17 +1,23 @@
-import { FC, useState, useEffect, memo, useCallback } from "react";
+import { FC, useState, useEffect, memo, useCallback, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { Grid, Box, Typography, Button, Card } from "@material-ui/core";
 import Skeleton from "@material-ui/lab/Skeleton";
 import format from "date-fns/format";
 import { useHistory } from "react-router-dom";
 import { useAppSelector } from "store";
-import { getExpensesHandler, setPeriod } from "store/slices/expenses";
+import {
+  getExpensesHandler,
+  setPeriod,
+  adaptingPeriodToDate,
+  adaptingPeriodToString,
+} from "store/slices/expenses";
+import { routes } from "constants/routes";
 import TariffDoughnut from "../TarrifDoughnut";
 import DateRangePicker from "../DateRangePicker";
 import { dateComparison } from "../../../helpers/dates";
-import { useStyles } from "./style";
 import ExpensesList from "./ExpensesList";
 import { baseColors } from "constants/colors";
+import { useStyles } from "./style";
 
 interface IDoughnut {
   labels: Array<string>;
@@ -51,14 +57,16 @@ const ExpensesCard: FC<ExpensesCardProps> = ({ isPersonal }) => {
   // ]);
 
   const setDateFromLastMonth = () =>
-    dispatch(setPeriod([lastMonth, new Date()]));
+    dispatch(setPeriod(adaptingPeriodToString([lastMonth, new Date()])));
 
-  const setCurrentDate = () => dispatch(setPeriod([new Date(), new Date()]));
+  const setCurrentDate = () =>
+    dispatch(setPeriod(adaptingPeriodToString([new Date(), new Date()])));
 
-  const setDateFromLastWeek = () => dispatch(setPeriod([lastWeek, new Date()]));
+  const setDateFromLastWeek = () =>
+    dispatch(setPeriod(adaptingPeriodToString([lastWeek, new Date()])));
 
   const setSelectedDate = useCallback(
-    (date) => dispatch(setPeriod(date)),
+    (date) => dispatch(setPeriod(adaptingPeriodToString(date))),
     [dispatch]
   );
 
@@ -66,8 +74,13 @@ const ExpensesCard: FC<ExpensesCardProps> = ({ isPersonal }) => {
 
   const { expenses, period } = useAppSelector((state) => state.expenses);
 
+  const adaptedToDatePeriod = useMemo(
+    () => adaptingPeriodToDate(period),
+    [period]
+  );
+
   const handleClick = useCallback(() => {
-    isPersonal && history.push("/expenses");
+    isPersonal && history.push(routes.expenses.base);
   }, [history, isPersonal]);
 
   const handleCostClick = () => handleClick();
@@ -108,13 +121,15 @@ const ExpensesCard: FC<ExpensesCardProps> = ({ isPersonal }) => {
   }, [expenses]);
 
   useEffect(() => {
-    const startDate = period[0] && format(period[0] as Date, "yyyy-MM-dd");
-    const endDate = period[1] && format(period[1] as Date, "yyyy-MM-dd");
+    const startDate =
+      adaptedToDatePeriod[0] && format(adaptedToDatePeriod[0], "yyyy-MM-dd");
+    const endDate =
+      adaptedToDatePeriod[1] && format(adaptedToDatePeriod[1], "yyyy-MM-dd");
 
     if (startDate && endDate) {
       dispatch(getExpensesHandler(startDate, endDate));
     }
-  }, [dispatch, period]);
+  }, [dispatch, adaptedToDatePeriod]);
 
   return (
     <>
@@ -152,7 +167,7 @@ const ExpensesCard: FC<ExpensesCardProps> = ({ isPersonal }) => {
                 onClick={btn.handler}
                 className={classes.periodButton}
                 style={
-                  dateComparison(period[0] as Date, btn.date)
+                  dateComparison(adaptedToDatePeriod[0] as Date, btn.date)
                     ? selectedDateStyle
                     : {}
                 }
@@ -163,7 +178,7 @@ const ExpensesCard: FC<ExpensesCardProps> = ({ isPersonal }) => {
             <Box width="200px" ml={1}>
               <DateRangePicker
                 disableFuture
-                selectedDate={period}
+                selectedDate={adaptedToDatePeriod}
                 handleDateChange={setSelectedDate}
               />
             </Box>
@@ -177,7 +192,7 @@ const ExpensesCard: FC<ExpensesCardProps> = ({ isPersonal }) => {
           >
             <Button
               className={classes.textButton}
-              onClick={() => history.push("/expenses")}
+              onClick={() => history.push(routes.expenses.base)}
             >
               Подробнее
             </Button>

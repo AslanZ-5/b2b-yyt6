@@ -26,9 +26,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action: PayloadAction<User | null>) => {
-      state.user = action.payload
-        ? { ...action.payload}
-        : null;
+      state.user = action.payload ? { ...action.payload } : null;
     },
     setAccounts: (state, action: PayloadAction<User[]>) => {
       state.accounts = action.payload;
@@ -52,15 +50,19 @@ export const fetchUser =
     try {
       const response: { data: User } = await getUser(token);
       const entityResponse: { data: EntityUser } = await getEntityUser(token);
+
       axios.defaults.headers.common["Authorization"] = token;
+
       localStorage.setItem("token", token);
       localStorage.setItem("refresh_token", refresh_token);
+
       const user = {
         ...response?.data,
         ...entityResponse?.data,
         token,
         refresh_token,
       };
+
       dispatch(setUser(user));
       dispatch(setAccounts(getUserAccountsFromLocaleStorage(user)));
       dispatch(setLoading(false));

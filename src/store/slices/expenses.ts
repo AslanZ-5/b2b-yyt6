@@ -3,13 +3,24 @@ import { DateRange } from "@material-ui/pickers-next";
 import subDays from "date-fns/subDays";
 import { getExpenses, getExpensesDetalization } from "api/expenses";
 
+export type ExpensesCategory =
+  | "all"
+  | "service"
+  | "payments"
+  | "calls"
+  | "sms"
+  | "outgoing"
+  | "internet"
+  | "roaming"
+  | "entertainment";
+
 export interface Expenses {
   data: {
     services: [
       {
         total: number;
         total_sum: number;
-        type: string;
+        type: ExpensesCategory;
         name: string;
         color: string;
         // in case of key === "internet"
@@ -25,7 +36,8 @@ export interface Expenses {
 
 interface ExpensesDetalization {
   data: Array<{
-    type: string;
+    custom_id: number;
+    type: ExpensesCategory;
     name: string;
     img: string;
     date: string;
@@ -39,9 +51,11 @@ interface ExpensesDetalization {
 interface ExpensesState {
   expenses: Expenses;
   detalization: ExpensesDetalization;
-  category: string;
-  period: DateRange<Date | null>;
+  category: ExpensesCategory;
+  period: DateRange<string | null>;
 }
+
+type AdaptedExpensesPeriod = DateRange<Date | null>;
 
 const initialState: ExpensesState = {
   expenses: {
@@ -53,7 +67,7 @@ const initialState: ExpensesState = {
     loading: false,
   },
   category: "all",
-  period: [subDays(new Date(), 7), new Date()],
+  period: [subDays(new Date(), 7).toString(), new Date().toString()],
 };
 
 export const expensesSlice = createSlice({
@@ -75,10 +89,10 @@ export const expensesSlice = createSlice({
     setDetalizationLoading: (state, { payload }: PayloadAction<boolean>) => {
       state.detalization.loading = payload;
     },
-    setCategory: (state, { payload }: PayloadAction<string>) => {
+    setCategory: (state, { payload }: PayloadAction<ExpensesCategory>) => {
       state.category = payload;
     },
-    setPeriod: (state, { payload }: PayloadAction<DateRange<Date | null>>) => {
+    setPeriod: (state, { payload }: PayloadAction<ExpensesState["period"]>) => {
       state.period = payload;
     },
   },
@@ -94,6 +108,16 @@ export const {
 } = expensesSlice.actions;
 
 export default expensesSlice.reducer;
+
+export const adaptingPeriodToString = (period: AdaptedExpensesPeriod) =>
+  period.map((part) =>
+    part instanceof Date ? part.toString() : part
+  ) as ExpensesState["period"];
+
+export const adaptingPeriodToDate = (period: ExpensesState["period"]) =>
+  period.map((part) =>
+    typeof part === "string" ? new Date(part) : part
+  ) as AdaptedExpensesPeriod;
 
 export const getExpensesHandler =
   (

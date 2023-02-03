@@ -1,20 +1,26 @@
-import { makeStyles, Theme } from "@material-ui/core/styles";
-import { baseColors } from "constants/colors";
+import { makeStyles } from "@material-ui/core/styles";
+import {
+  baseColors,
+  RegularFont,
+  BoldRegularFont,
+  BoldFont,
+} from "constants/colors";
 
-export const useStyles = makeStyles((theme: Theme) => ({
+export const useStyles = makeStyles(() => ({
   sectionTitle: {
     fontSize: 16,
-    fontWeight: "bold",
     marginBottom: 27,
+    ...BoldFont,
   },
   topText: {
     fontSize: 16,
     marginBottom: 5,
-    fontWeight: "bold",
+    ...BoldRegularFont,
   },
   bottomText: {
     fontSize: 14,
     color: baseColors.primaryGrey,
+    ...RegularFont,
   },
   detailSectionDivider: {
     height: 3,

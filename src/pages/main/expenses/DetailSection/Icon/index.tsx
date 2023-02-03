@@ -1,16 +1,9 @@
 import { FC } from "react";
+import { ExpensesCategory } from "store/slices/expenses";
 import { useStyles } from "./style";
 
 interface DetailSectionIconProps {
-  type:
-    | "service"
-    | "payments"
-    | "calls"
-    | "sms"
-    | "outgoing"
-    | "internet"
-    | "roaming"
-    | "entertainment";
+  type: Omit<ExpensesCategory, "all">;
 }
 
 const DetailSectionIcon: FC<DetailSectionIconProps> = ({ type }) => {
