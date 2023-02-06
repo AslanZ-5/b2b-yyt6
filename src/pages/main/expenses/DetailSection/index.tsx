@@ -9,9 +9,9 @@ interface DetailSectionProps {
   date: string;
   description: string;
   timestamp: string;
-  origin?: string;
   type: string;
   img: string;
+  origin?: string;
 }
 
 const DetailSection: FC<DetailSectionProps> = ({
@@ -22,7 +22,6 @@ const DetailSection: FC<DetailSectionProps> = ({
   type,
   img,
   description,
-  origin,
 }) => {
   const classes = useStyles();
   const [src, setSrc] = useState("/images/icons/rub.svg");

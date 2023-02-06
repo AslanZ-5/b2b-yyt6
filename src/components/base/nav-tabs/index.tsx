@@ -55,7 +55,7 @@ const NavTabs: FC<NavTabsProps> = ({ handleOpenExitDialog, closeDrawer }) => {
         id="navigationTabs"
       >
         {getTabsList(user?.isAdmin || false).map((tab) => (
-          <div className={classes.tabContainer} key={tab.label}>
+          <div className={classes.tabContainer} key={tab.path}>
             <Tab
               icon={
                 <img

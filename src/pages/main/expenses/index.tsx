@@ -1,4 +1,11 @@
-import React, { FC, useState, useEffect, useCallback, LegacyRef } from "react";
+import React, {
+  FC,
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  useRef,
+} from "react";
 import { useDispatch } from "react-redux";
 import {
   Grid,
@@ -18,6 +25,8 @@ import { dateComparison, getStrFromDate } from "helpers/dates";
 import {
   getExpensesDetalizationHandler,
   setCategory,
+  adaptingPeriodToDate,
+  ExpensesCategory,
 } from "store/slices/expenses";
 import { sendDetalization, getDetalizationPDF } from "api/expenses";
 import { useAppSelector } from "store";
@@ -33,7 +42,12 @@ interface IForm {
   email: string;
 }
 
-const tabs = [
+interface Tab {
+  name: string;
+  id: ExpensesCategory;
+}
+
+const tabs: Tab[] = [
   { name: "Все", id: "all" },
   { name: "Услуги", id: "service" },
   { name: "Пополнение", id: "payments" },
@@ -52,6 +66,30 @@ const findByPhone = (phone: string | undefined, search: string) => {
   return false;
 };
 
+const skeletonItems = (
+  <Grid container direction="column" style={{ marginBottom: "-20px" }}>
+    <Skeleton
+      variant="text"
+      animation="wave"
+      style={{ marginBottom: "20px" }}
+    />
+    {[1, 2, 3].map((el) => (
+      <Grid
+        container
+        justify="space-between"
+        key={el}
+        style={{ marginBottom: "20px" }}
+      >
+        <Skeleton variant="circle" width={50} height={50} animation="wave" />
+        <Grid item style={{ flex: "1", marginLeft: "8px" }}>
+          <Skeleton variant="text" animation="wave" />
+          <Skeleton variant="text" animation="wave" />
+        </Grid>
+      </Grid>
+    ))}
+  </Grid>
+);
+
 const Expenses: FC = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -62,15 +100,25 @@ const Expenses: FC = () => {
   );
   const { user } = useAppSelector((state) => state.user);
 
+  const adaptedToDatePeriod = useMemo(
+    () => adaptingPeriodToDate(period),
+    [period]
+  );
+
   const [detalizationListUI, setDetalizationListUI] = useState(
     detalization.data
   );
+
   const [searchValue, setSearchValue] = useState("");
   const [sendLoading, setSendLoading] = useState(false);
   const [detalizationSuccess, setDetalizationSuccess] = useState(false);
   const [showNoEmail, setShowNoEmail] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
   const [paid, setIsPaid] = useState(false);
+  const [errorDialog, setErrorDialog] = useState({
+    isOpen: false,
+    message: "",
+  });
 
   const {
     register,
@@ -82,57 +130,81 @@ const Expenses: FC = () => {
     },
   });
 
-  const startDate = period[0] && format(period[0] as Date, "yyyy-MM-dd");
-  const endDate = period[1] && format(period[1] as Date, "yyyy-MM-dd");
+  const startDate =
+    adaptedToDatePeriod[0] && format(adaptedToDatePeriod[0], "yyyy-MM-dd");
+  const endDate =
+    adaptedToDatePeriod[1] && format(adaptedToDatePeriod[1], "yyyy-MM-dd");
 
-  const handleChangeTabs = (_: unknown, newValue: string) => {
-    dispatch(setCategory(newValue));
+  const showReorderDetailingErrorDialog = () => {
+    setErrorDialog((prev) => ({
+      ...prev,
+      isOpen: true,
+      message:
+        "Повторный заказ детализации будет доступен cпустя некоторое время!",
+    }));
   };
 
-  useEffect(() => {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }, []);
+  const closeErrorDialog = () =>
+    setErrorDialog((prev) => ({ ...prev, isOpen: false }));
 
-  useEffect(() => {
-    dispatch(setCategory(category));
-  }, [category, dispatch]);
-
-  useEffect(() => {
-    setDetalizationListUI(
+  const retrieveAllDataForSelectedCategory = (
+    categoryName: ExpensesCategory
+  ) => {
+    const result =
       detalization.data &&
-        detalization.data.filter((el) => {
-          if (category === "all") {
-            return el;
-          } else {
-            return el.type === category;
-          }
-        })
-    );
-  }, [detalization.data, category]);
+      detalization.data.filter((el) => {
+        if (categoryName === "all") {
+          return el;
+        } else {
+          return categoryName === el.type;
+        }
+      });
 
-  useEffect(() => {
-    if (startDate && endDate) {
-      dispatch(getExpensesDetalizationHandler(startDate, endDate));
-    }
-  }, [dispatch, endDate, startDate]);
-
-  const handleMailBtnClick = () => {
-    setShowEmail(true);
+    setDetalizationListUI(result);
+    dispatch(setCategory(categoryName));
   };
+
+  const handleChangeTabs = (_: unknown, selectedCategory: ExpensesCategory) => {
+    retrieveAllDataForSelectedCategory(selectedCategory);
+  };
+
+  const handleMailBtnClick = () => setShowEmail(true);
 
   const closeEmailDialog = useCallback(() => setShowEmail(false), []);
 
   const searchHandler = () => {
-    setDetalizationListUI(
-      detalization.data &&
-        detalization.data.filter((el) => {
-          if (el.name.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1) {
-            return true;
-          }
-          return findByPhone(el.dialed, searchValue);
-        })
-    );
+    const searchValueTrim = searchValue.trim();
+
+    if (searchValueTrim === "") {
+      return retrieveAllDataForSelectedCategory("all");
+    }
+
+    const findedCategoryIdName = tabs.find((tab) =>
+      tab.name.toLowerCase().includes(searchValueTrim.toLowerCase())
+    )?.id;
+
+    const result =
+      detalization.data?.filter((el) => {
+        if (
+          findedCategoryIdName &&
+          el.type.toLowerCase().indexOf(findedCategoryIdName) !== -1
+        ) {
+          return true;
+        }
+
+        if (
+          el.name.toLowerCase().indexOf(searchValueTrim.toLowerCase()) !== -1
+        ) {
+          return true;
+        }
+        return findByPhone(el.dialed, searchValueTrim);
+      }) ?? [];
+
+    searchValueTrim &&
+      (result[0]?.type || findedCategoryIdName) &&
+      dispatch(setCategory(result[0]?.type ?? findedCategoryIdName));
+
+    setDetalizationListUI(result);
   };
 
   const getPDFHandler = async (type: "download" | "print") => {
@@ -142,7 +214,9 @@ const Expenses: FC = () => {
 
     try {
       const response = await getDetalizationPDF(startDate, endDate);
+
       const file = new Blob([response.data], { type: "application/pdf" });
+
       if (type === "download") {
         fileDownload(file, "detalization.pdf");
       } else {
@@ -157,8 +231,10 @@ const Expenses: FC = () => {
           window.open(fileURL);
         }
       }
+
       setSendLoading(false);
     } catch (err) {
+      showReorderDetailingErrorDialog();
       setSendLoading(false);
     }
   };
@@ -171,6 +247,8 @@ const Expenses: FC = () => {
       setShowEmail(false);
       setDetalizationSuccess(true);
     } catch (err) {
+      showReorderDetailingErrorDialog();
+      setSendLoading(false);
       setShowEmail(false);
     }
   };
@@ -190,91 +268,75 @@ const Expenses: FC = () => {
     [history]
   );
 
-  let initialDate =
+  const initialDateRef = useRef(
     detalization?.data && detalization.data[0]
       ? new Date(detalization.data[0].date)
-      : new Date();
-
-  let detailSectionList = null;
-  if (
-    detalizationListUI &&
-    Array.isArray(detalizationListUI) &&
-    detalizationListUI.length
-  ) {
-    detailSectionList = detalizationListUI
-      //фильтр платных транзакций
-      ?.filter((d) => (paid ? +d.total_sum > 0 : d))
-      .map((el, i) => {
-        //логика по отображению даты (если дата равна предыдущей, то передаётся пустая строка)
-        let finalDate = "",
-          time = "";
-        if (dateComparison(initialDate, new Date(el.date))) {
-          //тернарный оператор для отображения корректной даты первого элемента
-          finalDate = i === 0 ? getStrFromDate(initialDate) : "";
-        } else {
-          finalDate = getStrFromDate(new Date(el.date));
-
-          initialDate = new Date(el.date);
-        }
-
-        const hours = getHours(new Date(el.date));
-        const minutes = getMinutes(new Date(el.date));
-
-        time = `
-        ${hours}:${minutes < 10 ? `${minutes}0` : minutes}
-      `;
-
-        return (
-          <DetailSection
-            key={i}
-            name={el.name}
-            img={el.img}
-            sum={el.total_sum}
-            description={el.description}
-            date={finalDate}
-            timestamp={time}
-            type={el.type}
-          />
-        );
-      });
-  } else {
-    detailSectionList = (
-      <Typography className={classes.emptyCostsText}>
-        За данный период времени информации не обнаружено.
-      </Typography>
-    );
-  }
-
-  const skeletonItems = (
-    <Grid container direction="column" style={{ marginBottom: "-20px" }}>
-      <Skeleton
-        variant="text"
-        animation="wave"
-        style={{ marginBottom: "20px" }}
-      />
-      {[1, 2, 3].map((el) => {
-        return (
-          <Grid
-            container
-            justify="space-between"
-            key={el}
-            style={{ marginBottom: "20px" }}
-          >
-            <Skeleton
-              variant="circle"
-              width={50}
-              height={50}
-              animation="wave"
-            />
-            <Grid item style={{ flex: "1", marginLeft: "8px" }}>
-              <Skeleton variant="text" animation="wave" />
-              <Skeleton variant="text" animation="wave" />
-            </Grid>
-          </Grid>
-        );
-      })}
-    </Grid>
+      : new Date()
   );
+
+  const detailSectionList = useMemo(() => {
+    if (detalizationListUI && detalizationListUI.length) {
+      return (
+        detalizationListUI
+          //фильтр платных транзакций
+          ?.filter((d) => (paid ? +d.total_sum > 0 : d))
+          .map((el, i) => {
+            //логика по отображению даты (если дата равна предыдущей, то передаётся пустая строка)
+            let finalDate = "",
+              time = "";
+
+            if (dateComparison(initialDateRef.current, new Date(el.date))) {
+              //тернарный оператор для отображения корректной даты первого элемента
+              finalDate = i === 0 ? getStrFromDate(initialDateRef.current) : "";
+            } else {
+              finalDate = getStrFromDate(new Date(el.date));
+
+              initialDateRef.current = new Date(el.date);
+            }
+
+            const hours = getHours(new Date(el.date));
+            const minutes = getMinutes(new Date(el.date));
+
+            time = `${hours}:${minutes < 10 ? `${minutes}0` : minutes}`;
+
+            return (
+              <DetailSection
+                key={el.custom_id}
+                name={el.name}
+                img={el.img}
+                sum={el.total_sum}
+                description={el.description}
+                date={finalDate}
+                timestamp={time}
+                type={el.type}
+              />
+            );
+          })
+      );
+    } else {
+      return (
+        <Typography className={classes.emptyCostsText}>
+          За данный период времени информации не обнаружено.
+        </Typography>
+      );
+    }
+  }, [paid, detalizationListUI, classes.emptyCostsText]);
+
+  useEffect(() => {
+    retrieveAllDataForSelectedCategory(category);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [detalization.data]);
+
+  useEffect(() => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }, []);
+
+  useEffect(() => {
+    if (startDate && endDate) {
+      dispatch(getExpensesDetalizationHandler(startDate, endDate));
+    }
+  }, [dispatch, endDate, startDate]);
 
   return (
     <>
@@ -296,6 +358,15 @@ const Expenses: FC = () => {
         handleClose={closeNoEmailDialog}
       />
       <InfoDialog
+        show={errorDialog.isOpen}
+        type="error"
+        title="Произошла ошибка!"
+        description={errorDialog.message}
+        upButton={{ callback: closeErrorDialog }}
+        downButton={{ show: false }}
+        handleClose={closeErrorDialog}
+      />
+      <InfoDialog
         show={showEmail}
         type="inputMail"
         title="Заказать детализацию"
@@ -311,17 +382,14 @@ const Expenses: FC = () => {
                   ? `${classes.input} ${classes.errorBorder}`
                   : classes.input
               }
-              ref={
-                register("email", {
-                  required: true,
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Email введен неверно",
-                  },
-                }) as unknown as LegacyRef<HTMLInputElement>
-              }
-              name="email"
               placeholder="Введите email"
+              {...register("email", {
+                required: true,
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Email введен неверно",
+                },
+              })}
             />
             <Typography className={classes.errorText}>
               {errors.email && errors.email.message}
@@ -360,6 +428,7 @@ const Expenses: FC = () => {
           <IconButton
             className={classes.detalizationButton}
             disabled={sendLoading}
+            type="button"
             onClick={() => getPDFHandler("print")}
           >
             <img src="/images/icons/print.svg" alt="print" />
@@ -383,6 +452,7 @@ const Expenses: FC = () => {
             />
             <input
               className={classes.detalizationSearchInput}
+              value={searchValue}
               onChange={(event) => setSearchValue(event.target.value)}
               placeholder="Операция или номер телефона"
               onKeyUp={(e: any) => {

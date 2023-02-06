@@ -2,8 +2,9 @@ import { FC, memo } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Typography, Grid } from "@material-ui/core";
+import { Expenses, setCategory, ExpensesCategory } from "store/slices/expenses";
+import { routes } from "constants/routes";
 import { useStyles } from "../style";
-import { Expenses, setCategory } from "store/slices/expenses";
 
 interface ExpensesListProps {
   expenses: Expenses;
@@ -17,10 +18,10 @@ const ExpensesList: FC<ExpensesListProps> = ({ expenses, isPersonal }) => {
 
   const services = expenses?.data?.services;
 
-  const handleClick = (type: string) => {
+  const handleClick = (type: ExpensesCategory) => {
     dispatch(setCategory(type));
 
-    isPersonal && history.push("/expenses");
+    isPersonal && history.push(routes.expenses.base);
   };
 
   return (

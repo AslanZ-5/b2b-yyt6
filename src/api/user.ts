@@ -20,10 +20,11 @@ export const login = (data: {
   type: "password" | "otp";
 }) =>
   axios
-    .post(
-      `${MAIN_HOST}/api/v1/client/legal-entity/login`,
-      { login: data.login, password: data.password, type: data.type }
-    )
+    .post(`${MAIN_HOST}/api/v1/client/legal-entity/login`, {
+      login: data.login,
+      password: data.password,
+      type: data.type,
+    })
     .then((response) => response.data);
 
 export const getOtp = (data: { login: string }) =>
