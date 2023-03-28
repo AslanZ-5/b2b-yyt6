@@ -193,15 +193,20 @@ const Header: React.FC = () => {
                         justify="space-between"
                         alignItems="center"
                         item
+                        wrap="nowrap"
                         xs={6}
                         sm={10}
                       >
-                        <div className={classes.companyName} id="companyName">
+                        <div
+                          className={classes.companyName}
+                          id="companyName"
+                          title={user?.orgName}
+                        >
                           {user?.orgName || ""}
                         </div>
                         <div
-                          style={{ display: "flex", alignItems: "center" }}
                           id="accountsSelect"
+                          className={classes.accountSelect}
                         >
                           <Select
                             MenuProps={{
